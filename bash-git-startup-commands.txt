@@ -1,0 +1,3 @@
+# edited the .git/info/exclude file to include bulk-files for data input
+# to see the files excluded we type
+git ls-files --other --ignored --exclude-standard
