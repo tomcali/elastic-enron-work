@@ -1,0 +1,27 @@
+# start elasticsearch
+# begin at the home directory
+
+cd dev
+cd elasticsearch-5.2.1
+bin/elasticsearch
+
+# minimize the terminal application but keep the process running
+
+# at this point elasticsearch should be ready to work 
+# from a web browser using   http://localhost:9200
+
+If elasticsearch has been installed properly, we should see a web browser message such as this:
+
+ {
+  "name" : "es-node-1",
+  "cluster_name" : "elasticsearch",
+  "cluster_uuid" : "VeiQY7eZTyejQRGiLXoV8g",
+  "version" : {
+    "number" : "5.2.1",
+    "build_hash" : "db0d481",
+    "build_date" : "2017-02-09T22:05:32.386Z",
+    "build_snapshot" : false,
+    "lucene_version" : "6.4.1"
+  },
+  "tagline" : "You Know, for Search"
+}

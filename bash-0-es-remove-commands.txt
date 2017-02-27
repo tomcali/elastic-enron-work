@@ -1,0 +1,7 @@
+# remove elasticsearch kibana and x-pack
+
+cd dev
+rm -r elasticsearch-5.1.1/*
+rmdir elasticsearch-5.1.1
+rm -r kibana-5.1.1-darwin-x86_64/*
+rmdir kibana-5.1.1-darwin-x86_64

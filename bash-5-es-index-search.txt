@@ -1,0 +1,49 @@
+# we have elasticsearch running on localhost port 9200
+# and we have defined the index scheme for enron with data type email
+# we have completed bulk data input files 
+
+# while in terminal application, we can search the enron index email documents
+# to find, for example, all those with the exact word "silverlake" in the body
+# and to show the top ten matching documents in a pretty format
+curl 'localhost:9200/enron/email/_search?pretty' -d '{
+  "query": {
+    "match": {
+      "body": "silverpeak"
+    }
+  }      
+}'  
+
+# alternatively we could search all fields of the email documents
+curl 'localhost:9200/enron/email/_search?pretty' -d '{
+  "query": {
+    "match": {
+      "_all": "silverpeak"
+    }
+  }      
+}' 
+
+# show the number of documents that have "silverpeak"
+# across the body or Subject fields 
+curl 'localhost:9200/enron/email/_count?pretty' -d '{
+  "query": {
+    "multi_match": {
+      "fields": ["body", "Subject"],
+      "query": "silverpeak"
+    }
+  }      
+}' 
+
+# a fuzzy query will accept slight misspellings of the search word
+# let's see how many documents satisfy a fuzzy search on "silverpeak"
+# across the body or Subject fields 
+curl 'localhost:9200/enron/email/_count?pretty' -d '{
+  "query": {
+    "multi_match": {
+      "fields": ["body", "Subject"],
+      "query": "silverpeak",
+      "fuzziness": "AUTO"
+    }
+  }      
+}' 
+
+

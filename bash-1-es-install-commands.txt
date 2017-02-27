@@ -1,0 +1,18 @@
+# install elasticsearch
+# download the tar file
+# elasticsearch-5.2.1.tar.gz
+
+cd Downloads
+tar zxf elasticsearch-5.2.1.tar.gz
+
+cd elasticsearch-5.2.1
+open .  # edit the config/elasticsearch.yml file  used node.name: es-node-1
+
+# we have been working in downloads so far... time to move to ~/dev
+# go to Downloads 
+cd ..
+pwd  # check that we are indownloads and have the requisite directory elasticsearch-5.2.1
+
+mv elasticsearch-5.2.1 ~/dev/elasticsearch-5.2.1
+
+# now we are ready to startup elasticsearch

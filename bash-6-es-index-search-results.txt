@@ -1,0 +1,535 @@
+poweruser-2:~ poweruser$ curl 'localhost:9200/enron/email/_search?pretty' -d '{
+>   "query": {
+>     "match": {
+>       "body": "silverpeak"
+>     }
+>   }      
+> }' 
+{
+  "took" : 5,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 1,
+    "successful" : 1,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : 14,
+    "max_score" : 12.916447,
+    "hits" : [
+      {
+        "_index" : "enron",
+        "_type" : "email",
+        "_id" : "<30684138.1075841590968.JavaMail.evans@thyme>",
+        "_score" : 12.916447,
+        "_source" : {
+          "body" : "The ISO cut the one side of my wheel on HE24 on 4/13. \n\nI had a firm export at 4C (EPMI_CISO_BUNNY)  of 20 mw for a sale to powerex and a wheel EPMI_CISO_ TOBY at PALO going out at Silverpeak. \nThey cut the sale to POWEREX and the following imports. They cut the following:\n\nEPMI_CISO_BUNNY 20 to a 8\nEPMI_CISO_TOBY IMPORT 12 to 4. \n\nAll this while keeping my EPMI_CISO_TOBY Export at a 12. \n\nBasically they used both the WHEEL IMPORT/ FIRM IMPORT to Fill the WHEEL EXPORT.\n\nGeir ",
+          "mailbox" : "solberg-g",
+          "headers" : {
+            "X-From" : "Geir Solberg",
+            "X-To" : "Volume_Management_Portland <Volume_Management_Portland@ECT>",
+            "From" : "geir.solberg@enron.com",
+            "Date" : "Sat, 14 Apr 2001 12:42:00 -0700 (PDT)",
+            "To" : "volume_management_portland@enron.com",
+            "X-bcc" : "",
+            "Subject" : "Strange cut:",
+            "X-cc" : "",
+            "Message-ID" : "<30684138.1075841590968.JavaMail.evans@thyme>"
+          },
+          "subFolder" : "sent_items"
+        }
+      },
+      {
+        "_index" : "enron",
+        "_type" : "email",
+        "_id" : "<32275542.1075840591373.JavaMail.evans@thyme>",
+        "_score" : 12.763365,
+        "_source" : {
+          "body" : "Hey Guys. \n\nWe have a new strategy taking power from the south to the north. Right now \nSierra Pacific will only let us schedule 12MW on the tie so do not try to \nschedule any more (The tie is only good for 17MW).\n\n- Either do a export from SP15 to Silverpeak or put in a wheel going out at \nSilverpeak(From PV or FC).\n- Buy transmission from SPP from  (www.swoasis.com ) CONTROL TO HILLTOP. \n($6.90 on-peak, $3.90 off-peak)\n- Buy transmission from PAC from MAL2 TO MAL5. ($5.84)\n- Buy transmission from BPA from HILLTOP TO SNOHO or another Sink. (Account \nnumbers below).\n\nWe need to bounce this of SNOHO before we send it back in at Malin. \n\nTHIS SCHEDULE NEEDS TO BE TAGGED OR SIERRA PACIFIC GETS VERY PISSED OFF, THEY \nARE NOT USED TO DOING TO MUCH REAL TIME. THERE IS A TEMPLATE FOR THIS \nSCHEDULE SO IT SHOULD NOT BE HARD. Call and confirm the request with both PAC \nand Sierra.\n\n\n\nAlso do not sell to a marketer(especially POWEREX) without sleeving. We do \nnot want anybody else to know about the path. If Powerex sees this I \nguarantee that they would try to schedule this and we do not want \ncompetition. Right now the only person using the tie is SOCAL EDISON and they \nare flowing 12MW into Cali, going the opposite way of us way.  \n\nIt is available 24hrs a day so lets take advantage of it as much as we can.\nIf you have any questions over the weekend call me.\n\nAccount numbers:\nSPP - PAC: 853724\nSPP-SNOHO: 853703\nSPP-PUGET: 853725\n\n\nGeir",
+          "mailbox" : "guzman-m",
+          "headers" : {
+            "X-From" : "Geir Solberg",
+            "X-To" : "Portland Shift",
+            "From" : "geir.solberg@enron.com",
+            "Date" : "Mon, 16 Apr 2001 10:24:00 -0700 (PDT)",
+            "To" : "portland.shift@enron.com",
+            "X-bcc" : "",
+            "Subject" : "NEW DEAL! EXPORT AT SILVERPEAK!!!!",
+            "X-cc" : "",
+            "Message-ID" : "<32275542.1075840591373.JavaMail.evans@thyme>"
+          },
+          "subFolder" : "all_documents"
+        }
+      },
+      {
+        "_index" : "enron",
+        "_type" : "email",
+        "_id" : "<7670731.1075840700079.JavaMail.evans@thyme>",
+        "_score" : 12.763365,
+        "_source" : {
+          "body" : "Hey Guys. \n\nWe have a new strategy taking power from the south to the north. Right now \nSierra Pacific will only let us schedule 12MW on the tie so do not try to \nschedule any more (The tie is only good for 17MW).\n\n- Either do a export from SP15 to Silverpeak or put in a wheel going out at \nSilverpeak(From PV or FC).\n- Buy transmission from SPP from  (www.swoasis.com ) CONTROL TO HILLTOP. \n($6.90 on-peak, $3.90 off-peak)\n- Buy transmission from PAC from MAL2 TO MAL5. ($5.84)\n- Buy transmission from BPA from HILLTOP TO SNOHO or another Sink. (Account \nnumbers below).\n\nWe need to bounce this of SNOHO before we send it back in at Malin. \n\nTHIS SCHEDULE NEEDS TO BE TAGGED OR SIERRA PACIFIC GETS VERY PISSED OFF, THEY \nARE NOT USED TO DOING TO MUCH REAL TIME. THERE IS A TEMPLATE FOR THIS \nSCHEDULE SO IT SHOULD NOT BE HARD. Call and confirm the request with both PAC \nand Sierra.\n\n\n\nAlso do not sell to a marketer(especially POWEREX) without sleeving. We do \nnot want anybody else to know about the path. If Powerex sees this I \nguarantee that they would try to schedule this and we do not want \ncompetition. Right now the only person using the tie is SOCAL EDISON and they \nare flowing 12MW into Cali, going the opposite way of us way.  \n\nIt is available 24hrs a day so lets take advantage of it as much as we can.\nIf you have any questions over the weekend call me.\n\nAccount numbers:\nSPP - PAC: 853724\nSPP-SNOHO: 853703\nSPP-PUGET: 853725\n\n\nGeir",
+          "mailbox" : "guzman-m",
+          "headers" : {
+            "X-From" : "Geir Solberg",
+            "X-To" : "Portland Shift",
+            "From" : "geir.solberg@enron.com",
+            "Date" : "Mon, 16 Apr 2001 10:24:00 -0700 (PDT)",
+            "To" : "portland.shift@enron.com",
+            "X-bcc" : "",
+            "Subject" : "NEW DEAL! EXPORT AT SILVERPEAK!!!!",
+            "X-cc" : "",
+            "Message-ID" : "<7670731.1075840700079.JavaMail.evans@thyme>"
+          },
+          "subFolder" : "notes_inbox"
+        }
+      },
+      {
+        "_index" : "enron",
+        "_type" : "email",
+        "_id" : "<32025956.1075841009827.JavaMail.evans@thyme>",
+        "_score" : 12.763365,
+        "_source" : {
+          "body" : "Hey Guys. \n\nWe have a new strategy taking power from the south to the north. Right now \nSierra Pacific will only let us schedule 12MW on the tie so do not try to \nschedule any more (The tie is only good for 17MW).\n\n- Either do a export from SP15 to Silverpeak or put in a wheel going out at \nSilverpeak(From PV or FC).\n- Buy transmission from SPP from  (www.swoasis.com ) CONTROL TO HILLTOP. \n($6.90 on-peak, $3.90 off-peak)\n- Buy transmission from PAC from MAL2 TO MAL5. ($5.84)\n- Buy transmission from BPA from HILLTOP TO SNOHO or another Sink. (Account \nnumbers below).\n\nWe need to bounce this of SNOHO before we send it back in at Malin. \n\nTHIS SCHEDULE NEEDS TO BE TAGGED OR SIERRA PACIFIC GETS VERY PISSED OFF, THEY \nARE NOT USED TO DOING TO MUCH REAL TIME. THERE IS A TEMPLATE FOR THIS \nSCHEDULE SO IT SHOULD NOT BE HARD. Call and confirm the request with both PAC \nand Sierra.\n\n\n\nAlso do not sell to a marketer(especially POWEREX) without sleeving. We do \nnot want anybody else to know about the path. If Powerex sees this I \nguarantee that they would try to schedule this and we do not want \ncompetition. Right now the only person using the tie is SOCAL EDISON and they \nare flowing 12MW into Cali, going the opposite way of us way.  \n\nIt is available 24hrs a day so lets take advantage of it as much as we can.\nIf you have any questions over the weekend call me.\n\nAccount numbers:\nSPP - PAC: 853724\nSPP-SNOHO: 853703\nSPP-PUGET: 853725\n\n\nGeir",
+          "mailbox" : "linder-e",
+          "headers" : {
+            "X-From" : "Geir Solberg",
+            "X-To" : "Portland Shift",
+            "From" : "geir.solberg@enron.com",
+            "Date" : "Mon, 16 Apr 2001 10:24:00 -0700 (PDT)",
+            "To" : "portland.shift@enron.com",
+            "X-bcc" : "",
+            "Subject" : "NEW DEAL! EXPORT AT SILVERPEAK!!!!",
+            "X-cc" : "",
+            "Message-ID" : "<32025956.1075841009827.JavaMail.evans@thyme>"
+          },
+          "subFolder" : "all_documents"
+        }
+      },
+      {
+        "_index" : "enron",
+        "_type" : "email",
+        "_id" : "<3999076.1075841033366.JavaMail.evans@thyme>",
+        "_score" : 12.763365,
+        "_source" : {
+          "body" : "Hey Guys. \n\nWe have a new strategy taking power from the south to the north. Right now \nSierra Pacific will only let us schedule 12MW on the tie so do not try to \nschedule any more (The tie is only good for 17MW).\n\n- Either do a export from SP15 to Silverpeak or put in a wheel going out at \nSilverpeak(From PV or FC).\n- Buy transmission from SPP from  (www.swoasis.com ) CONTROL TO HILLTOP. \n($6.90 on-peak, $3.90 off-peak)\n- Buy transmission from PAC from MAL2 TO MAL5. ($5.84)\n- Buy transmission from BPA from HILLTOP TO SNOHO or another Sink. (Account \nnumbers below).\n\nWe need to bounce this of SNOHO before we send it back in at Malin. \n\nTHIS SCHEDULE NEEDS TO BE TAGGED OR SIERRA PACIFIC GETS VERY PISSED OFF, THEY \nARE NOT USED TO DOING TO MUCH REAL TIME. THERE IS A TEMPLATE FOR THIS \nSCHEDULE SO IT SHOULD NOT BE HARD. Call and confirm the request with both PAC \nand Sierra.\n\n\n\nAlso do not sell to a marketer(especially POWEREX) without sleeving. We do \nnot want anybody else to know about the path. If Powerex sees this I \nguarantee that they would try to schedule this and we do not want \ncompetition. Right now the only person using the tie is SOCAL EDISON and they \nare flowing 12MW into Cali, going the opposite way of us way.  \n\nIt is available 24hrs a day so lets take advantage of it as much as we can.\nIf you have any questions over the weekend call me.\n\nAccount numbers:\nSPP - PAC: 853724\nSPP-SNOHO: 853703\nSPP-PUGET: 853725\n\n\nGeir",
+          "mailbox" : "linder-e",
+          "headers" : {
+            "X-From" : "Geir Solberg",
+            "X-To" : "Portland Shift",
+            "From" : "geir.solberg@enron.com",
+            "Date" : "Mon, 16 Apr 2001 10:24:00 -0700 (PDT)",
+            "To" : "portland.shift@enron.com",
+            "X-bcc" : "",
+            "Subject" : "NEW DEAL! EXPORT AT SILVERPEAK!!!!",
+            "X-cc" : "",
+            "Message-ID" : "<3999076.1075841033366.JavaMail.evans@thyme>"
+          },
+          "subFolder" : "discussion_threads"
+        }
+      },
+      {
+        "_index" : "enron",
+        "_type" : "email",
+        "_id" : "<32549028.1075841538559.JavaMail.evans@thyme>",
+        "_score" : 12.763365,
+        "_source" : {
+          "body" : "Hey Guys. \n\nWe have a new strategy taking power from the south to the north. Right now Sierra Pacific will only let us schedule 12MW on the tie so do not try to schedule any more (The tie is only good for 17MW).\n\n- Either do a export from SP15 to Silverpeak or put in a wheel going out at Silverpeak(From PV or FC).\n- Buy transmission from SPP from  (www.swoasis.com ) CONTROL TO HILLTOP. ($6.90 on-peak, $3.90 off-peak)\n- Buy transmission from PAC from MAL2 TO MAL5. ($5.84)\n- Buy transmission from BPA from HILLTOP TO SNOHO or another Sink. (Account numbers below).\n\nWe need to bounce this of SNOHO before we send it back in at Malin. \n\nTHIS SCHEDULE NEEDS TO BE TAGGED OR SIERRA PACIFIC GETS VERY PISSED OFF, THEY ARE NOT USED TO DOING TO MUCH REAL TIME. THERE IS A TEMPLATE FOR THIS SCHEDULE SO IT SHOULD NOT BE HARD. Call and confirm the request with both PAC and Sierra.\n\n\n\nAlso do not sell to a marketer(especially POWEREX) without sleeving. We do not want anybody else to know about the path. If Powerex sees this I guarantee that they would try to schedule this and we do not want competition. Right now the only person using the tie is SOCAL EDISON and they are flowing 12MW into Cali, going the opposite way of us way.  \n\nIt is available 24hrs a day so lets take advantage of it as much as we can.\nIf you have any questions over the weekend call me.\n\nAccount numbers:\nSPP - PAC: 853724\nSPP-SNOHO: 853703\nSPP-PUGET: 853725\n\n\nGeir",
+          "mailbox" : "salisbury-h",
+          "headers" : {
+            "X-From" : "Geir Solberg <Geir Solberg/PDX/ECT@ECT>",
+            "X-To" : "Portland Shift <Portland Shift@ECT>",
+            "From" : "geir.solberg@enron.com",
+            "Date" : "Tue, 17 Apr 2001 00:24:00 -0700 (PDT)",
+            "To" : "portland.shift@enron.com",
+            "X-bcc" : "",
+            "Subject" : "NEW DEAL! EXPORT AT SILVERPEAK!!!!",
+            "X-cc" : "",
+            "Message-ID" : "<32549028.1075841538559.JavaMail.evans@thyme>"
+          },
+          "subFolder" : "read"
+        }
+      },
+      {
+        "_index" : "enron",
+        "_type" : "email",
+        "_id" : "<1765583.1075841250845.JavaMail.evans@thyme>",
+        "_score" : 12.763365,
+        "_source" : {
+          "body" : "Hey Guys. \n\nWe have a new strategy taking power from the south to the north. Right now \nSierra Pacific will only let us schedule 12MW on the tie so do not try to \nschedule any more (The tie is only good for 17MW).\n\n- Either do a export from SP15 to Silverpeak or put in a wheel going out at \nSilverpeak(From PV or FC).\n- Buy transmission from SPP from  (www.swoasis.com ) CONTROL TO HILLTOP. \n($6.90 on-peak, $3.90 off-peak)\n- Buy transmission from PAC from MAL2 TO MAL5. ($5.84)\n- Buy transmission from BPA from HILLTOP TO SNOHO or another Sink. (Account \nnumbers below).\n\nWe need to bounce this of SNOHO before we send it back in at Malin. \n\nTHIS SCHEDULE NEEDS TO BE TAGGED OR SIERRA PACIFIC GETS VERY PISSED OFF, THEY \nARE NOT USED TO DOING TO MUCH REAL TIME. THERE IS A TEMPLATE FOR THIS \nSCHEDULE SO IT SHOULD NOT BE HARD. Call and confirm the request with both PAC \nand Sierra.\n\n\n\nAlso do not sell to a marketer(especially POWEREX) without sleeving. We do \nnot want anybody else to know about the path. If Powerex sees this I \nguarantee that they would try to schedule this and we do not want \ncompetition. Right now the only person using the tie is SOCAL EDISON and they \nare flowing 12MW into Cali, going the opposite way of us way.  \n\nIt is available 24hrs a day so lets take advantage of it as much as we can.\nIf you have any questions over the weekend call me.\n\nAccount numbers:\nSPP - PAC: 853724\nSPP-SNOHO: 853703\nSPP-PUGET: 853725\n\n\nGeir",
+          "mailbox" : "merriss-s",
+          "headers" : {
+            "X-From" : "Geir Solberg",
+            "X-To" : "Portland Shift",
+            "From" : "geir.solberg@enron.com",
+            "Date" : "Mon, 16 Apr 2001 10:24:00 -0700 (PDT)",
+            "To" : "portland.shift@enron.com",
+            "X-bcc" : "",
+            "Subject" : "NEW DEAL! EXPORT AT SILVERPEAK!!!!",
+            "X-cc" : "",
+            "Message-ID" : "<1765583.1075841250845.JavaMail.evans@thyme>"
+          },
+          "subFolder" : "all_documents"
+        }
+      },
+      {
+        "_index" : "enron",
+        "_type" : "email",
+        "_id" : "<30472956.1075839947340.JavaMail.evans@thyme>",
+        "_score" : 12.763365,
+        "_source" : {
+          "body" : "Hey Guys. \n\nWe have a new strategy taking power from the south to the north. Right now Sierra Pacific will only let us schedule 12MW on the tie so do not try to schedule any more (The tie is only good for 17MW).\n\n- Either do a export from SP15 to Silverpeak or put in a wheel going out at Silverpeak(From PV or FC).\n- Buy transmission from SPP from  (www.swoasis.com ) CONTROL TO HILLTOP. ($6.90 on-peak, $3.90 off-peak)\n- Buy transmission from PAC from MAL2 TO MAL5. ($5.84)\n- Buy transmission from BPA from HILLTOP TO SNOHO or another Sink. (Account numbers below).\n\nWe need to bounce this of SNOHO before we send it back in at Malin. \n\nTHIS SCHEDULE NEEDS TO BE TAGGED OR SIERRA PACIFIC GETS VERY PISSED OFF, THEY ARE NOT USED TO DOING TO MUCH REAL TIME. THERE IS A TEMPLATE FOR THIS SCHEDULE SO IT SHOULD NOT BE HARD. Call and confirm the request with both PAC and Sierra.\n\n\n\nAlso do not sell to a marketer(especially POWEREX) without sleeving. We do not want anybody else to know about the path. If Powerex sees this I guarantee that they would try to schedule this and we do not want competition. Right now the only person using the tie is SOCAL EDISON and they are flowing 12MW into Cali, going the opposite way of us way.  \n\nIt is available 24hrs a day so lets take advantage of it as much as we can.\nIf you have any questions over the weekend call me.\n\nAccount numbers:\nSPP - PAC: 853724\nSPP-SNOHO: 853703\nSPP-PUGET: 853725\n\n\nGeir",
+          "mailbox" : "williams-w3",
+          "headers" : {
+            "X-From" : "Geir Solberg <Geir Solberg/PDX/ECT@ECT>",
+            "X-To" : "Portland Shift <Portland Shift@ECT>",
+            "From" : "geir.solberg@enron.com",
+            "Date" : "Tue, 17 Apr 2001 03:24:00 -0700 (PDT)",
+            "To" : "portland.shift@enron.com",
+            "X-bcc" : "",
+            "Subject" : "NEW DEAL! EXPORT AT SILVERPEAK!!!!",
+            "X-cc" : "",
+            "Message-ID" : "<30472956.1075839947340.JavaMail.evans@thyme>"
+          },
+          "subFolder" : "rt_strat"
+        }
+      },
+      {
+        "_index" : "enron",
+        "_type" : "email",
+        "_id" : "<30471578.1075841028201.JavaMail.evans@thyme>",
+        "_score" : 11.786764,
+        "_source" : {
+          "body" : "Group,\nI have purchased 8 mws from the service desk for Tuesday (04/10) in SP-15.  \nWe bought 8 mws from a service customer through the APX.  I have made the \nentries into CAPs for the purchase from APX.  I have inc'd load in ST-WBOM.  \nLoad will need to be dec'd and the energy sold off. You may want to  combine \nit with EES(or buy some mws to make it a whole piece to sell) and use NCPA to \nmove it North.  Or maybe export it at Silverpeak.  The schedule is as \nfollows.  8 mw, HE 1-24 on 04/10 in SP-15.  The price is $150 peak, and $100 \noff peak.  Purchase from Services is #574640, and purchase from APX is \n#574629.  Please make any buy-resales and sales under ST-WBOM. \nPlease call with any questions.\n\nThanks,\nBill\n",
+          "mailbox" : "linder-e",
+          "headers" : {
+            "X-From" : "Bill Williams III",
+            "X-To" : "Portland Shift",
+            "From" : "bill.iii@enron.com",
+            "Date" : "Mon, 9 Apr 2001 02:33:00 -0700 (PDT)",
+            "To" : "portland.shift@enron.com",
+            "X-bcc" : "",
+            "Subject" : "Length from APX",
+            "X-cc" : "",
+            "Message-ID" : "<30471578.1075841028201.JavaMail.evans@thyme>"
+          },
+          "subFolder" : "discussion_threads"
+        }
+      },
+      {
+        "_index" : "enron",
+        "_type" : "email",
+        "_id" : "<9639343.1075841263319.JavaMail.evans@thyme>",
+        "_score" : 11.786764,
+        "_source" : {
+          "body" : "Group,\nI have purchased 8 mws from the service desk for Tuesday (04/10) in SP-15.  \nWe bought 8 mws from a service customer through the APX.  I have made the \nentries into CAPs for the purchase from APX.  I have inc'd load in ST-WBOM.  \nLoad will need to be dec'd and the energy sold off. You may want to  combine \nit with EES(or buy some mws to make it a whole piece to sell) and use NCPA to \nmove it North.  Or maybe export it at Silverpeak.  The schedule is as \nfollows.  8 mw, HE 1-24 on 04/10 in SP-15.  The price is $150 peak, and $100 \noff peak.  Purchase from Services is #574640, and purchase from APX is \n#574629.  Please make any buy-resales and sales under ST-WBOM. \nPlease call with any questions.\n\nThanks,\nBill\n",
+          "mailbox" : "merriss-s",
+          "headers" : {
+            "X-From" : "Bill Williams III",
+            "X-To" : "Portland Shift",
+            "From" : "bill.iii@enron.com",
+            "Date" : "Mon, 9 Apr 2001 02:33:00 -0700 (PDT)",
+            "To" : "portland.shift@enron.com",
+            "X-bcc" : "",
+            "Subject" : "Length from APX",
+            "X-cc" : "",
+            "Message-ID" : "<9639343.1075841263319.JavaMail.evans@thyme>"
+          },
+          "subFolder" : "discussion_threads"
+        }
+      }
+    ]
+  }
+}
+
+
+
+
+
+
+poweruser-2:~ poweruser$ curl 'localhost:9200/enron/email/_search?pretty' -d '{
+>   "query": {
+>     "match": {
+>       "_all": "silverpeak"
+>     }
+>   }      
+> }' 
+{
+  "took" : 4,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 1,
+    "successful" : 1,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : 14,
+    "max_score" : 15.509389,
+    "hits" : [
+      {
+        "_index" : "enron",
+        "_type" : "email",
+        "_id" : "<32275542.1075840591373.JavaMail.evans@thyme>",
+        "_score" : 15.509389,
+        "_source" : {
+          "body" : "Hey Guys. \n\nWe have a new strategy taking power from the south to the north. Right now \nSierra Pacific will only let us schedule 12MW on the tie so do not try to \nschedule any more (The tie is only good for 17MW).\n\n- Either do a export from SP15 to Silverpeak or put in a wheel going out at \nSilverpeak(From PV or FC).\n- Buy transmission from SPP from  (www.swoasis.com ) CONTROL TO HILLTOP. \n($6.90 on-peak, $3.90 off-peak)\n- Buy transmission from PAC from MAL2 TO MAL5. ($5.84)\n- Buy transmission from BPA from HILLTOP TO SNOHO or another Sink. (Account \nnumbers below).\n\nWe need to bounce this of SNOHO before we send it back in at Malin. \n\nTHIS SCHEDULE NEEDS TO BE TAGGED OR SIERRA PACIFIC GETS VERY PISSED OFF, THEY \nARE NOT USED TO DOING TO MUCH REAL TIME. THERE IS A TEMPLATE FOR THIS \nSCHEDULE SO IT SHOULD NOT BE HARD. Call and confirm the request with both PAC \nand Sierra.\n\n\n\nAlso do not sell to a marketer(especially POWEREX) without sleeving. We do \nnot want anybody else to know about the path. If Powerex sees this I \nguarantee that they would try to schedule this and we do not want \ncompetition. Right now the only person using the tie is SOCAL EDISON and they \nare flowing 12MW into Cali, going the opposite way of us way.  \n\nIt is available 24hrs a day so lets take advantage of it as much as we can.\nIf you have any questions over the weekend call me.\n\nAccount numbers:\nSPP - PAC: 853724\nSPP-SNOHO: 853703\nSPP-PUGET: 853725\n\n\nGeir",
+          "mailbox" : "guzman-m",
+          "headers" : {
+            "X-From" : "Geir Solberg",
+            "X-To" : "Portland Shift",
+            "From" : "geir.solberg@enron.com",
+            "Date" : "Mon, 16 Apr 2001 10:24:00 -0700 (PDT)",
+            "To" : "portland.shift@enron.com",
+            "X-bcc" : "",
+            "Subject" : "NEW DEAL! EXPORT AT SILVERPEAK!!!!",
+            "X-cc" : "",
+            "Message-ID" : "<32275542.1075840591373.JavaMail.evans@thyme>"
+          },
+          "subFolder" : "all_documents"
+        }
+      },
+      {
+        "_index" : "enron",
+        "_type" : "email",
+        "_id" : "<7670731.1075840700079.JavaMail.evans@thyme>",
+        "_score" : 15.509389,
+        "_source" : {
+          "body" : "Hey Guys. \n\nWe have a new strategy taking power from the south to the north. Right now \nSierra Pacific will only let us schedule 12MW on the tie so do not try to \nschedule any more (The tie is only good for 17MW).\n\n- Either do a export from SP15 to Silverpeak or put in a wheel going out at \nSilverpeak(From PV or FC).\n- Buy transmission from SPP from  (www.swoasis.com ) CONTROL TO HILLTOP. \n($6.90 on-peak, $3.90 off-peak)\n- Buy transmission from PAC from MAL2 TO MAL5. ($5.84)\n- Buy transmission from BPA from HILLTOP TO SNOHO or another Sink. (Account \nnumbers below).\n\nWe need to bounce this of SNOHO before we send it back in at Malin. \n\nTHIS SCHEDULE NEEDS TO BE TAGGED OR SIERRA PACIFIC GETS VERY PISSED OFF, THEY \nARE NOT USED TO DOING TO MUCH REAL TIME. THERE IS A TEMPLATE FOR THIS \nSCHEDULE SO IT SHOULD NOT BE HARD. Call and confirm the request with both PAC \nand Sierra.\n\n\n\nAlso do not sell to a marketer(especially POWEREX) without sleeving. We do \nnot want anybody else to know about the path. If Powerex sees this I \nguarantee that they would try to schedule this and we do not want \ncompetition. Right now the only person using the tie is SOCAL EDISON and they \nare flowing 12MW into Cali, going the opposite way of us way.  \n\nIt is available 24hrs a day so lets take advantage of it as much as we can.\nIf you have any questions over the weekend call me.\n\nAccount numbers:\nSPP - PAC: 853724\nSPP-SNOHO: 853703\nSPP-PUGET: 853725\n\n\nGeir",
+          "mailbox" : "guzman-m",
+          "headers" : {
+            "X-From" : "Geir Solberg",
+            "X-To" : "Portland Shift",
+            "From" : "geir.solberg@enron.com",
+            "Date" : "Mon, 16 Apr 2001 10:24:00 -0700 (PDT)",
+            "To" : "portland.shift@enron.com",
+            "X-bcc" : "",
+            "Subject" : "NEW DEAL! EXPORT AT SILVERPEAK!!!!",
+            "X-cc" : "",
+            "Message-ID" : "<7670731.1075840700079.JavaMail.evans@thyme>"
+          },
+          "subFolder" : "notes_inbox"
+        }
+      },
+      {
+        "_index" : "enron",
+        "_type" : "email",
+        "_id" : "<32025956.1075841009827.JavaMail.evans@thyme>",
+        "_score" : 15.509389,
+        "_source" : {
+          "body" : "Hey Guys. \n\nWe have a new strategy taking power from the south to the north. Right now \nSierra Pacific will only let us schedule 12MW on the tie so do not try to \nschedule any more (The tie is only good for 17MW).\n\n- Either do a export from SP15 to Silverpeak or put in a wheel going out at \nSilverpeak(From PV or FC).\n- Buy transmission from SPP from  (www.swoasis.com ) CONTROL TO HILLTOP. \n($6.90 on-peak, $3.90 off-peak)\n- Buy transmission from PAC from MAL2 TO MAL5. ($5.84)\n- Buy transmission from BPA from HILLTOP TO SNOHO or another Sink. (Account \nnumbers below).\n\nWe need to bounce this of SNOHO before we send it back in at Malin. \n\nTHIS SCHEDULE NEEDS TO BE TAGGED OR SIERRA PACIFIC GETS VERY PISSED OFF, THEY \nARE NOT USED TO DOING TO MUCH REAL TIME. THERE IS A TEMPLATE FOR THIS \nSCHEDULE SO IT SHOULD NOT BE HARD. Call and confirm the request with both PAC \nand Sierra.\n\n\n\nAlso do not sell to a marketer(especially POWEREX) without sleeving. We do \nnot want anybody else to know about the path. If Powerex sees this I \nguarantee that they would try to schedule this and we do not want \ncompetition. Right now the only person using the tie is SOCAL EDISON and they \nare flowing 12MW into Cali, going the opposite way of us way.  \n\nIt is available 24hrs a day so lets take advantage of it as much as we can.\nIf you have any questions over the weekend call me.\n\nAccount numbers:\nSPP - PAC: 853724\nSPP-SNOHO: 853703\nSPP-PUGET: 853725\n\n\nGeir",
+          "mailbox" : "linder-e",
+          "headers" : {
+            "X-From" : "Geir Solberg",
+            "X-To" : "Portland Shift",
+            "From" : "geir.solberg@enron.com",
+            "Date" : "Mon, 16 Apr 2001 10:24:00 -0700 (PDT)",
+            "To" : "portland.shift@enron.com",
+            "X-bcc" : "",
+            "Subject" : "NEW DEAL! EXPORT AT SILVERPEAK!!!!",
+            "X-cc" : "",
+            "Message-ID" : "<32025956.1075841009827.JavaMail.evans@thyme>"
+          },
+          "subFolder" : "all_documents"
+        }
+      },
+      {
+        "_index" : "enron",
+        "_type" : "email",
+        "_id" : "<3999076.1075841033366.JavaMail.evans@thyme>",
+        "_score" : 15.509389,
+        "_source" : {
+          "body" : "Hey Guys. \n\nWe have a new strategy taking power from the south to the north. Right now \nSierra Pacific will only let us schedule 12MW on the tie so do not try to \nschedule any more (The tie is only good for 17MW).\n\n- Either do a export from SP15 to Silverpeak or put in a wheel going out at \nSilverpeak(From PV or FC).\n- Buy transmission from SPP from  (www.swoasis.com ) CONTROL TO HILLTOP. \n($6.90 on-peak, $3.90 off-peak)\n- Buy transmission from PAC from MAL2 TO MAL5. ($5.84)\n- Buy transmission from BPA from HILLTOP TO SNOHO or another Sink. (Account \nnumbers below).\n\nWe need to bounce this of SNOHO before we send it back in at Malin. \n\nTHIS SCHEDULE NEEDS TO BE TAGGED OR SIERRA PACIFIC GETS VERY PISSED OFF, THEY \nARE NOT USED TO DOING TO MUCH REAL TIME. THERE IS A TEMPLATE FOR THIS \nSCHEDULE SO IT SHOULD NOT BE HARD. Call and confirm the request with both PAC \nand Sierra.\n\n\n\nAlso do not sell to a marketer(especially POWEREX) without sleeving. We do \nnot want anybody else to know about the path. If Powerex sees this I \nguarantee that they would try to schedule this and we do not want \ncompetition. Right now the only person using the tie is SOCAL EDISON and they \nare flowing 12MW into Cali, going the opposite way of us way.  \n\nIt is available 24hrs a day so lets take advantage of it as much as we can.\nIf you have any questions over the weekend call me.\n\nAccount numbers:\nSPP - PAC: 853724\nSPP-SNOHO: 853703\nSPP-PUGET: 853725\n\n\nGeir",
+          "mailbox" : "linder-e",
+          "headers" : {
+            "X-From" : "Geir Solberg",
+            "X-To" : "Portland Shift",
+            "From" : "geir.solberg@enron.com",
+            "Date" : "Mon, 16 Apr 2001 10:24:00 -0700 (PDT)",
+            "To" : "portland.shift@enron.com",
+            "X-bcc" : "",
+            "Subject" : "NEW DEAL! EXPORT AT SILVERPEAK!!!!",
+            "X-cc" : "",
+            "Message-ID" : "<3999076.1075841033366.JavaMail.evans@thyme>"
+          },
+          "subFolder" : "discussion_threads"
+        }
+      },
+      {
+        "_index" : "enron",
+        "_type" : "email",
+        "_id" : "<32549028.1075841538559.JavaMail.evans@thyme>",
+        "_score" : 15.509389,
+        "_source" : {
+          "body" : "Hey Guys. \n\nWe have a new strategy taking power from the south to the north. Right now Sierra Pacific will only let us schedule 12MW on the tie so do not try to schedule any more (The tie is only good for 17MW).\n\n- Either do a export from SP15 to Silverpeak or put in a wheel going out at Silverpeak(From PV or FC).\n- Buy transmission from SPP from  (www.swoasis.com ) CONTROL TO HILLTOP. ($6.90 on-peak, $3.90 off-peak)\n- Buy transmission from PAC from MAL2 TO MAL5. ($5.84)\n- Buy transmission from BPA from HILLTOP TO SNOHO or another Sink. (Account numbers below).\n\nWe need to bounce this of SNOHO before we send it back in at Malin. \n\nTHIS SCHEDULE NEEDS TO BE TAGGED OR SIERRA PACIFIC GETS VERY PISSED OFF, THEY ARE NOT USED TO DOING TO MUCH REAL TIME. THERE IS A TEMPLATE FOR THIS SCHEDULE SO IT SHOULD NOT BE HARD. Call and confirm the request with both PAC and Sierra.\n\n\n\nAlso do not sell to a marketer(especially POWEREX) without sleeving. We do not want anybody else to know about the path. If Powerex sees this I guarantee that they would try to schedule this and we do not want competition. Right now the only person using the tie is SOCAL EDISON and they are flowing 12MW into Cali, going the opposite way of us way.  \n\nIt is available 24hrs a day so lets take advantage of it as much as we can.\nIf you have any questions over the weekend call me.\n\nAccount numbers:\nSPP - PAC: 853724\nSPP-SNOHO: 853703\nSPP-PUGET: 853725\n\n\nGeir",
+          "mailbox" : "salisbury-h",
+          "headers" : {
+            "X-From" : "Geir Solberg <Geir Solberg/PDX/ECT@ECT>",
+            "X-To" : "Portland Shift <Portland Shift@ECT>",
+            "From" : "geir.solberg@enron.com",
+            "Date" : "Tue, 17 Apr 2001 00:24:00 -0700 (PDT)",
+            "To" : "portland.shift@enron.com",
+            "X-bcc" : "",
+            "Subject" : "NEW DEAL! EXPORT AT SILVERPEAK!!!!",
+            "X-cc" : "",
+            "Message-ID" : "<32549028.1075841538559.JavaMail.evans@thyme>"
+          },
+          "subFolder" : "read"
+        }
+      },
+      {
+        "_index" : "enron",
+        "_type" : "email",
+        "_id" : "<1765583.1075841250845.JavaMail.evans@thyme>",
+        "_score" : 15.509389,
+        "_source" : {
+          "body" : "Hey Guys. \n\nWe have a new strategy taking power from the south to the north. Right now \nSierra Pacific will only let us schedule 12MW on the tie so do not try to \nschedule any more (The tie is only good for 17MW).\n\n- Either do a export from SP15 to Silverpeak or put in a wheel going out at \nSilverpeak(From PV or FC).\n- Buy transmission from SPP from  (www.swoasis.com ) CONTROL TO HILLTOP. \n($6.90 on-peak, $3.90 off-peak)\n- Buy transmission from PAC from MAL2 TO MAL5. ($5.84)\n- Buy transmission from BPA from HILLTOP TO SNOHO or another Sink. (Account \nnumbers below).\n\nWe need to bounce this of SNOHO before we send it back in at Malin. \n\nTHIS SCHEDULE NEEDS TO BE TAGGED OR SIERRA PACIFIC GETS VERY PISSED OFF, THEY \nARE NOT USED TO DOING TO MUCH REAL TIME. THERE IS A TEMPLATE FOR THIS \nSCHEDULE SO IT SHOULD NOT BE HARD. Call and confirm the request with both PAC \nand Sierra.\n\n\n\nAlso do not sell to a marketer(especially POWEREX) without sleeving. We do \nnot want anybody else to know about the path. If Powerex sees this I \nguarantee that they would try to schedule this and we do not want \ncompetition. Right now the only person using the tie is SOCAL EDISON and they \nare flowing 12MW into Cali, going the opposite way of us way.  \n\nIt is available 24hrs a day so lets take advantage of it as much as we can.\nIf you have any questions over the weekend call me.\n\nAccount numbers:\nSPP - PAC: 853724\nSPP-SNOHO: 853703\nSPP-PUGET: 853725\n\n\nGeir",
+          "mailbox" : "merriss-s",
+          "headers" : {
+            "X-From" : "Geir Solberg",
+            "X-To" : "Portland Shift",
+            "From" : "geir.solberg@enron.com",
+            "Date" : "Mon, 16 Apr 2001 10:24:00 -0700 (PDT)",
+            "To" : "portland.shift@enron.com",
+            "X-bcc" : "",
+            "Subject" : "NEW DEAL! EXPORT AT SILVERPEAK!!!!",
+            "X-cc" : "",
+            "Message-ID" : "<1765583.1075841250845.JavaMail.evans@thyme>"
+          },
+          "subFolder" : "all_documents"
+        }
+      },
+      {
+        "_index" : "enron",
+        "_type" : "email",
+        "_id" : "<30472956.1075839947340.JavaMail.evans@thyme>",
+        "_score" : 15.509389,
+        "_source" : {
+          "body" : "Hey Guys. \n\nWe have a new strategy taking power from the south to the north. Right now Sierra Pacific will only let us schedule 12MW on the tie so do not try to schedule any more (The tie is only good for 17MW).\n\n- Either do a export from SP15 to Silverpeak or put in a wheel going out at Silverpeak(From PV or FC).\n- Buy transmission from SPP from  (www.swoasis.com ) CONTROL TO HILLTOP. ($6.90 on-peak, $3.90 off-peak)\n- Buy transmission from PAC from MAL2 TO MAL5. ($5.84)\n- Buy transmission from BPA from HILLTOP TO SNOHO or another Sink. (Account numbers below).\n\nWe need to bounce this of SNOHO before we send it back in at Malin. \n\nTHIS SCHEDULE NEEDS TO BE TAGGED OR SIERRA PACIFIC GETS VERY PISSED OFF, THEY ARE NOT USED TO DOING TO MUCH REAL TIME. THERE IS A TEMPLATE FOR THIS SCHEDULE SO IT SHOULD NOT BE HARD. Call and confirm the request with both PAC and Sierra.\n\n\n\nAlso do not sell to a marketer(especially POWEREX) without sleeving. We do not want anybody else to know about the path. If Powerex sees this I guarantee that they would try to schedule this and we do not want competition. Right now the only person using the tie is SOCAL EDISON and they are flowing 12MW into Cali, going the opposite way of us way.  \n\nIt is available 24hrs a day so lets take advantage of it as much as we can.\nIf you have any questions over the weekend call me.\n\nAccount numbers:\nSPP - PAC: 853724\nSPP-SNOHO: 853703\nSPP-PUGET: 853725\n\n\nGeir",
+          "mailbox" : "williams-w3",
+          "headers" : {
+            "X-From" : "Geir Solberg <Geir Solberg/PDX/ECT@ECT>",
+            "X-To" : "Portland Shift <Portland Shift@ECT>",
+            "From" : "geir.solberg@enron.com",
+            "Date" : "Tue, 17 Apr 2001 03:24:00 -0700 (PDT)",
+            "To" : "portland.shift@enron.com",
+            "X-bcc" : "",
+            "Subject" : "NEW DEAL! EXPORT AT SILVERPEAK!!!!",
+            "X-cc" : "",
+            "Message-ID" : "<30472956.1075839947340.JavaMail.evans@thyme>"
+          },
+          "subFolder" : "rt_strat"
+        }
+      },
+      {
+        "_index" : "enron",
+        "_type" : "email",
+        "_id" : "<30684138.1075841590968.JavaMail.evans@thyme>",
+        "_score" : 13.500901,
+        "_source" : {
+          "body" : "The ISO cut the one side of my wheel on HE24 on 4/13. \n\nI had a firm export at 4C (EPMI_CISO_BUNNY)  of 20 mw for a sale to powerex and a wheel EPMI_CISO_ TOBY at PALO going out at Silverpeak. \nThey cut the sale to POWEREX and the following imports. They cut the following:\n\nEPMI_CISO_BUNNY 20 to a 8\nEPMI_CISO_TOBY IMPORT 12 to 4. \n\nAll this while keeping my EPMI_CISO_TOBY Export at a 12. \n\nBasically they used both the WHEEL IMPORT/ FIRM IMPORT to Fill the WHEEL EXPORT.\n\nGeir ",
+          "mailbox" : "solberg-g",
+          "headers" : {
+            "X-From" : "Geir Solberg",
+            "X-To" : "Volume_Management_Portland <Volume_Management_Portland@ECT>",
+            "From" : "geir.solberg@enron.com",
+            "Date" : "Sat, 14 Apr 2001 12:42:00 -0700 (PDT)",
+            "To" : "volume_management_portland@enron.com",
+            "X-bcc" : "",
+            "Subject" : "Strange cut:",
+            "X-cc" : "",
+            "Message-ID" : "<30684138.1075841590968.JavaMail.evans@thyme>"
+          },
+          "subFolder" : "sent_items"
+        }
+      },
+      {
+        "_index" : "enron",
+        "_type" : "email",
+        "_id" : "<30471578.1075841028201.JavaMail.evans@thyme>",
+        "_score" : 10.993749,
+        "_source" : {
+          "body" : "Group,\nI have purchased 8 mws from the service desk for Tuesday (04/10) in SP-15.  \nWe bought 8 mws from a service customer through the APX.  I have made the \nentries into CAPs for the purchase from APX.  I have inc'd load in ST-WBOM.  \nLoad will need to be dec'd and the energy sold off. You may want to  combine \nit with EES(or buy some mws to make it a whole piece to sell) and use NCPA to \nmove it North.  Or maybe export it at Silverpeak.  The schedule is as \nfollows.  8 mw, HE 1-24 on 04/10 in SP-15.  The price is $150 peak, and $100 \noff peak.  Purchase from Services is #574640, and purchase from APX is \n#574629.  Please make any buy-resales and sales under ST-WBOM. \nPlease call with any questions.\n\nThanks,\nBill\n",
+          "mailbox" : "linder-e",
+          "headers" : {
+            "X-From" : "Bill Williams III",
+            "X-To" : "Portland Shift",
+            "From" : "bill.iii@enron.com",
+            "Date" : "Mon, 9 Apr 2001 02:33:00 -0700 (PDT)",
+            "To" : "portland.shift@enron.com",
+            "X-bcc" : "",
+            "Subject" : "Length from APX",
+            "X-cc" : "",
+            "Message-ID" : "<30471578.1075841028201.JavaMail.evans@thyme>"
+          },
+          "subFolder" : "discussion_threads"
+        }
+      },
+      {
+        "_index" : "enron",
+        "_type" : "email",
+        "_id" : "<9639343.1075841263319.JavaMail.evans@thyme>",
+        "_score" : 10.993749,
+        "_source" : {
+          "body" : "Group,\nI have purchased 8 mws from the service desk for Tuesday (04/10) in SP-15.  \nWe bought 8 mws from a service customer through the APX.  I have made the \nentries into CAPs for the purchase from APX.  I have inc'd load in ST-WBOM.  \nLoad will need to be dec'd and the energy sold off. You may want to  combine \nit with EES(or buy some mws to make it a whole piece to sell) and use NCPA to \nmove it North.  Or maybe export it at Silverpeak.  The schedule is as \nfollows.  8 mw, HE 1-24 on 04/10 in SP-15.  The price is $150 peak, and $100 \noff peak.  Purchase from Services is #574640, and purchase from APX is \n#574629.  Please make any buy-resales and sales under ST-WBOM. \nPlease call with any questions.\n\nThanks,\nBill\n",
+          "mailbox" : "merriss-s",
+          "headers" : {
+            "X-From" : "Bill Williams III",
+            "X-To" : "Portland Shift",
+            "From" : "bill.iii@enron.com",
+            "Date" : "Mon, 9 Apr 2001 02:33:00 -0700 (PDT)",
+            "To" : "portland.shift@enron.com",
+            "X-bcc" : "",
+            "Subject" : "Length from APX",
+            "X-cc" : "",
+            "Message-ID" : "<9639343.1075841263319.JavaMail.evans@thyme>"
+          },
+          "subFolder" : "discussion_threads"
+        }
+      }
+    ]
+  }
+}
+
+
+
+
+
+
+poweruser-2:~ poweruser$ curl 'localhost:9200/enron/email/_count?pretty' -d '{
+>   "query": {
+>     "multi_match": {
+>       "fields": ["body", "Subject"],
+>       "query": "silverpeak"
+>     }
+>   }      
+> }' 
+{
+  "count" : 14,
+  "_shards" : {
+    "total" : 1,
+    "successful" : 1,
+    "failed" : 0
+  }
+}
+
+
+
+
+
+poweruser-2:~ poweruser$ curl 'localhost:9200/enron/email/_count?pretty' -d '{
+>   "query": {
+>     "multi_match": {
+>       "fields": ["body", "Subject"],
+>       "query": "silverpeak",
+>       "fuzziness": "AUTO"
+>     }
+>   }      
+> }'
+{
+  "count" : 17,
+  "_shards" : {
+    "total" : 1,
+    "successful" : 1,
+    "failed" : 0
+  }
+}
+

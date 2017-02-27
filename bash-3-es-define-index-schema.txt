@@ -1,0 +1,87 @@
+# we have elasticsearch running on localhost port 9200
+# and we want to set things up for the enron-email index
+
+# it is best to create the index prior to loading data into it
+# this is like setting up a schema for a relational database
+# here we set up an index called "enron" with one data type called "email"
+
+# we start up a new terminal application and use curl
+curl -XPUT 'localhost:9200/enron' -d '{
+  "settings":{
+    "index.number_of_shards":1,
+    "index.number_of_replicas":0,
+    "index":{
+      "analysis":{
+        "analyzer":{
+          "myanalyzer":{
+            "type":"custom",
+            "tokenizer":"uax_url_email"
+          }
+        }
+      }
+    }
+  },
+  "mappings":{
+    "email":{
+      "properties":{
+        "body":{
+          "type":"text"
+        },
+        "headers":{
+          "type":"nested",
+          "properties":{
+            "Date":{
+              "type":"date",
+              "format":"EEE, dd MMM yyyy HH:mm:ss Z (z)"
+            },
+            "From":{
+              "type":"text",
+              "analyzer":"myanalyzer"
+            },
+            "Message-ID":{
+              "type":"string",
+              "include_in_all": false,
+              "index": "no"
+            },
+            "Subject":{
+              "type":"text"
+            },
+            "To":{
+              "type":"text",
+              "analyzer":"myanalyzer"
+            },
+            "X-From":{
+              "type":"text"
+            },
+            "X-To":{
+              "type":"text"
+            },
+            "X-bcc":{
+              "type":"text"
+            },
+            "X-cc":{
+              "type":"text"
+            }
+          }
+        },  
+        "mailbox":{
+          "type":"text"
+        },
+        "subFolder":{
+          "type":"string",
+          "include_in_all": false,
+          "index": "no"
+        }
+      }
+    }
+  }
+}'
+
+# if it runs we should get a response such as this:
+# {"acknowledged":true,"shards_acknowledged":true}poweruser-2:~ poweruser$ 
+
+# if we make a mistake and want to remove an index named XXXX
+# we can do so with the command
+# curl -XDELETE localhost:9200/XXXX
+# to which we will get a message like this
+# {"acknowledged":true}poweruser-2:~ poweruser$ 
