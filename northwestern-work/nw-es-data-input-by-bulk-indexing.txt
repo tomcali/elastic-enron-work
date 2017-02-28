@@ -1,0 +1,565 @@
+# we have elasticsearch running on localhost port 9200
+# and we have defined the index scheme for enron with data type email
+# we have created bulk data input files that have pairs of JSON records
+# the first record or each pair is the JSON indexing request
+# the second record of each pair is the JSON email document
+
+# here are some sample data showing pairs of JSON records
+# each indexing record shows the index name document type and id for the document
+{"index":{"_index":"enron", "_type":"email", "_id":"<296353.1075854677622.JavaMail.evans@thyme>"}}
+{"body": "DId you talk to Burkhart??  I prefer him but if not, I will ask Mauricio.", "mailbox": "bass-e", "headers": {"X-From": "Luis Mena", "X-To": "Eric Bass", "From": "luis.mena@enron.com", "Date": "Tue, 14 Nov 2000 03:00:00 -0800 (PST)", "To": "eric.bass@enron.com", "X-bcc": "", "Subject": "", "X-cc": "", "Message-ID": "<296353.1075854677622.JavaMail.evans@thyme>"}, "subFolder": "notes_inbox"}
+{"index":{"_index":"enron", "_type":"email", "_id":"<14751038.1075854677646.JavaMail.evans@thyme>"}}
+{"body": "Mr. Simmons -\n\nWe are holding our own \"closed\" practices and do not want to show you any of \nour\noffensive and defensive packages before Saturday.  Appreciate the invite.....\nis our bet for $50 with our team getting 9 points still on?\n\n\n\n\n\nMichael Simmons\n11/14/2000 10:40 AM\nTo: Stephen Schwarzbach/Corp/Enron@Enron, Eric Bass/HOU/ECT@ECT, Luis \nMena/NA/Enron@Enron, Paul J Broderick/HOU/ECT@ECT, Sarah Goodpastor/Enron \nCommunications@Enron Communications, Christopher Chenoweth/NA/Enron@Enron\ncc: Webb Jennings/HOU/ECT@ECT \nSubject: Wed . Night scrimmage/practice\n\nProfessor Webb, \n\nWe would like to have a scrimmage/practice with your team this Wednesday.    \nThe aggie teams have already held practice as of Sunday and are scrimmaging \nthis Wednesday as well  (to which we are not invited).   As they pose the \ngreatest hurdle to obtaining the tickets, it is essential that we prepare in \nsimilar fashion.....\n\nHowever, we are unable to find a LIGHTED field to practice upon (Memorial is \nunlit)..     \n\n\nIf anyone knows of a lighted field for practice  (Rice University???), please \ncontact me ASAP so we can schedule a practice for Wednesday evening.\n\n\n- Mike  ext  37842\n\n\n=== \n\nWebb, I'm counting on you not to let the Longhorn tradition down....\n\n", "mailbox": "bass-e", "headers": {"X-From": "Webb Jennings", "X-To": "Michael Simmons", "From": "webb.jennings@enron.com", "Date": "Tue, 14 Nov 2000 02:51:00 -0800 (PST)", "To": "michael.simmons@enron.com", "X-bcc": "", "Subject": "Re: Wed . Night scrimmage/practice", "X-cc": "Stephen Schwarzbach, Eric Bass, Luis Mena, Paul J Broderick, Sarah Goodpastor, Christopher Chenoweth", "Message-ID": "<14751038.1075854677646.JavaMail.evans@thyme>"}, "subFolder": "notes_inbox"}
+
+# while in terminal application, we can locate the directory with the bulk data files
+# and issue another curl command with the _bulk setting for a file named YYYY
+
+curl -XPOST localhost:9200/_bulk --data-binary @YYYY
+
+# To check on the status of the index after a bulk operation, we use _stats
+# for the enron index, adding "?pretty" to see the pretty printing of the JSON response
+curl -XGET localhost:9200/enron/_stats?pretty
+
+cd 
+cd bulk_files
+
+
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_1_0
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_1_1
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_1_2
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_1_3
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_1_4
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_1_5
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_1_6
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_1_7
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_1_8
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_1_9
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_2_0
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_2_1
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_2_2
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_2_3
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_2_4
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_2_5
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_2_6
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_2_7
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_2_8
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_2_9
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_3_0
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_3_1
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_3_2
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_3_3
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_3_4
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_3_5
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_3_6
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_3_7
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_3_8
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_3_9
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_4_0
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_4_1
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_4_2
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_4_3
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_4_4
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_4_5
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_4_6
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_4_7
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_4_8
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_4_9
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_5_0
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_5_1
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_5_2
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_5_3
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_5_4
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_5_5
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_5_6
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_5_7
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_5_8
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_5_9
+curl -XPOST localhost:9200/_bulk --data-binary @enron_mail_5_10
+
+# statistics after loading all of the data into the index
+curl -XGET localhost:9200/enron/_stats?pretty
+{
+  "_shards" : {
+    "total" : 1,
+    "successful" : 1,
+    "failed" : 0
+  },
+  "_all" : {
+    "primaries" : {
+      "docs" : {
+        "count" : 501512,
+        "deleted" : 0
+      },
+      "store" : {
+        "size_in_bytes" : 1262807021,
+        "throttle_time_in_millis" : 0
+      },
+      "indexing" : {
+        "index_total" : 250756,
+        "index_time_in_millis" : 123206,
+        "index_current" : 0,
+        "index_failed" : 0,
+        "delete_total" : 0,
+        "delete_time_in_millis" : 0,
+        "delete_current" : 0,
+        "noop_update_total" : 0,
+        "is_throttled" : false,
+        "throttle_time_in_millis" : 0
+      },
+      "get" : {
+        "total" : 2,
+        "time_in_millis" : 3,
+        "exists_total" : 0,
+        "exists_time_in_millis" : 0,
+        "missing_total" : 2,
+        "missing_time_in_millis" : 3,
+        "current" : 0
+      },
+      "search" : {
+        "open_contexts" : 0,
+        "query_total" : 0,
+        "query_time_in_millis" : 0,
+        "query_current" : 0,
+        "fetch_total" : 0,
+        "fetch_time_in_millis" : 0,
+        "fetch_current" : 0,
+        "scroll_total" : 0,
+        "scroll_time_in_millis" : 0,
+        "scroll_current" : 0,
+        "suggest_total" : 0,
+        "suggest_time_in_millis" : 0,
+        "suggest_current" : 0
+      },
+      "merges" : {
+        "current" : 0,
+        "current_docs" : 0,
+        "current_size_in_bytes" : 0,
+        "total" : 15,
+        "total_time_in_millis" : 135411,
+        "total_docs" : 818242,
+        "total_size_in_bytes" : 1300227702,
+        "total_stopped_time_in_millis" : 0,
+        "total_throttled_time_in_millis" : 94412,
+        "total_auto_throttle_in_bytes" : 8085428
+      },
+      "refresh" : {
+        "total" : 171,
+        "total_time_in_millis" : 36674,
+        "listeners" : 0
+      },
+      "flush" : {
+        "total" : 2,
+        "total_time_in_millis" : 325
+      },
+      "warmer" : {
+        "current" : 0,
+        "total" : 174,
+        "total_time_in_millis" : 273
+      },
+      "query_cache" : {
+        "memory_size_in_bytes" : 0,
+        "total_count" : 0,
+        "hit_count" : 0,
+        "miss_count" : 0,
+        "cache_size" : 0,
+        "cache_count" : 0,
+        "evictions" : 0
+      },
+      "fielddata" : {
+        "memory_size_in_bytes" : 0,
+        "evictions" : 0
+      },
+      "completion" : {
+        "size_in_bytes" : 0
+      },
+      "segments" : {
+        "count" : 21,
+        "memory_in_bytes" : 1027329,
+        "terms_memory_in_bytes" : 873195,
+        "stored_fields_memory_in_bytes" : 132872,
+        "term_vectors_memory_in_bytes" : 0,
+        "norms_memory_in_bytes" : 13440,
+        "points_memory_in_bytes" : 1858,
+        "doc_values_memory_in_bytes" : 5964,
+        "index_writer_memory_in_bytes" : 0,
+        "version_map_memory_in_bytes" : 0,
+        "fixed_bit_set_memory_in_bytes" : 63608,
+        "max_unsafe_auto_id_timestamp" : -1,
+        "file_sizes" : { }
+      },
+      "translog" : {
+        "operations" : 50756,
+        "size_in_bytes" : 131741445
+      },
+      "request_cache" : {
+        "memory_size_in_bytes" : 0,
+        "evictions" : 0,
+        "hit_count" : 0,
+        "miss_count" : 0
+      },
+      "recovery" : {
+        "current_as_source" : 0,
+        "current_as_target" : 0,
+        "throttle_time_in_millis" : 0
+      }
+    },
+    "total" : {
+      "docs" : {
+        "count" : 501512,
+        "deleted" : 0
+      },
+      "store" : {
+        "size_in_bytes" : 1262807021,
+        "throttle_time_in_millis" : 0
+      },
+      "indexing" : {
+        "index_total" : 250756,
+        "index_time_in_millis" : 123206,
+        "index_current" : 0,
+        "index_failed" : 0,
+        "delete_total" : 0,
+        "delete_time_in_millis" : 0,
+        "delete_current" : 0,
+        "noop_update_total" : 0,
+        "is_throttled" : false,
+        "throttle_time_in_millis" : 0
+      },
+      "get" : {
+        "total" : 2,
+        "time_in_millis" : 3,
+        "exists_total" : 0,
+        "exists_time_in_millis" : 0,
+        "missing_total" : 2,
+        "missing_time_in_millis" : 3,
+        "current" : 0
+      },
+      "search" : {
+        "open_contexts" : 0,
+        "query_total" : 0,
+        "query_time_in_millis" : 0,
+        "query_current" : 0,
+        "fetch_total" : 0,
+        "fetch_time_in_millis" : 0,
+        "fetch_current" : 0,
+        "scroll_total" : 0,
+        "scroll_time_in_millis" : 0,
+        "scroll_current" : 0,
+        "suggest_total" : 0,
+        "suggest_time_in_millis" : 0,
+        "suggest_current" : 0
+      },
+      "merges" : {
+        "current" : 0,
+        "current_docs" : 0,
+        "current_size_in_bytes" : 0,
+        "total" : 15,
+        "total_time_in_millis" : 135411,
+        "total_docs" : 818242,
+        "total_size_in_bytes" : 1300227702,
+        "total_stopped_time_in_millis" : 0,
+        "total_throttled_time_in_millis" : 94412,
+        "total_auto_throttle_in_bytes" : 8085428
+      },
+      "refresh" : {
+        "total" : 171,
+        "total_time_in_millis" : 36674,
+        "listeners" : 0
+      },
+      "flush" : {
+        "total" : 2,
+        "total_time_in_millis" : 325
+      },
+      "warmer" : {
+        "current" : 0,
+        "total" : 174,
+        "total_time_in_millis" : 273
+      },
+      "query_cache" : {
+        "memory_size_in_bytes" : 0,
+        "total_count" : 0,
+        "hit_count" : 0,
+        "miss_count" : 0,
+        "cache_size" : 0,
+        "cache_count" : 0,
+        "evictions" : 0
+      },
+      "fielddata" : {
+        "memory_size_in_bytes" : 0,
+        "evictions" : 0
+      },
+      "completion" : {
+        "size_in_bytes" : 0
+      },
+      "segments" : {
+        "count" : 21,
+        "memory_in_bytes" : 1027329,
+        "terms_memory_in_bytes" : 873195,
+        "stored_fields_memory_in_bytes" : 132872,
+        "term_vectors_memory_in_bytes" : 0,
+        "norms_memory_in_bytes" : 13440,
+        "points_memory_in_bytes" : 1858,
+        "doc_values_memory_in_bytes" : 5964,
+        "index_writer_memory_in_bytes" : 0,
+        "version_map_memory_in_bytes" : 0,
+        "fixed_bit_set_memory_in_bytes" : 63608,
+        "max_unsafe_auto_id_timestamp" : -1,
+        "file_sizes" : { }
+      },
+      "translog" : {
+        "operations" : 50756,
+        "size_in_bytes" : 131741445
+      },
+      "request_cache" : {
+        "memory_size_in_bytes" : 0,
+        "evictions" : 0,
+        "hit_count" : 0,
+        "miss_count" : 0
+      },
+      "recovery" : {
+        "current_as_source" : 0,
+        "current_as_target" : 0,
+        "throttle_time_in_millis" : 0
+      }
+    }
+  },
+  "indices" : {
+    "enron" : {
+      "primaries" : {
+        "docs" : {
+          "count" : 501512,
+          "deleted" : 0
+        },
+        "store" : {
+          "size_in_bytes" : 1262807021,
+          "throttle_time_in_millis" : 0
+        },
+        "indexing" : {
+          "index_total" : 250756,
+          "index_time_in_millis" : 123206,
+          "index_current" : 0,
+          "index_failed" : 0,
+          "delete_total" : 0,
+          "delete_time_in_millis" : 0,
+          "delete_current" : 0,
+          "noop_update_total" : 0,
+          "is_throttled" : false,
+          "throttle_time_in_millis" : 0
+        },
+        "get" : {
+          "total" : 2,
+          "time_in_millis" : 3,
+          "exists_total" : 0,
+          "exists_time_in_millis" : 0,
+          "missing_total" : 2,
+          "missing_time_in_millis" : 3,
+          "current" : 0
+        },
+        "search" : {
+          "open_contexts" : 0,
+          "query_total" : 0,
+          "query_time_in_millis" : 0,
+          "query_current" : 0,
+          "fetch_total" : 0,
+          "fetch_time_in_millis" : 0,
+          "fetch_current" : 0,
+          "scroll_total" : 0,
+          "scroll_time_in_millis" : 0,
+          "scroll_current" : 0,
+          "suggest_total" : 0,
+          "suggest_time_in_millis" : 0,
+          "suggest_current" : 0
+        },
+        "merges" : {
+          "current" : 0,
+          "current_docs" : 0,
+          "current_size_in_bytes" : 0,
+          "total" : 15,
+          "total_time_in_millis" : 135411,
+          "total_docs" : 818242,
+          "total_size_in_bytes" : 1300227702,
+          "total_stopped_time_in_millis" : 0,
+          "total_throttled_time_in_millis" : 94412,
+          "total_auto_throttle_in_bytes" : 8085428
+        },
+        "refresh" : {
+          "total" : 171,
+          "total_time_in_millis" : 36674,
+          "listeners" : 0
+        },
+        "flush" : {
+          "total" : 2,
+          "total_time_in_millis" : 325
+        },
+        "warmer" : {
+          "current" : 0,
+          "total" : 174,
+          "total_time_in_millis" : 273
+        },
+        "query_cache" : {
+          "memory_size_in_bytes" : 0,
+          "total_count" : 0,
+          "hit_count" : 0,
+          "miss_count" : 0,
+          "cache_size" : 0,
+          "cache_count" : 0,
+          "evictions" : 0
+        },
+        "fielddata" : {
+          "memory_size_in_bytes" : 0,
+          "evictions" : 0
+        },
+        "completion" : {
+          "size_in_bytes" : 0
+        },
+        "segments" : {
+          "count" : 21,
+          "memory_in_bytes" : 1027329,
+          "terms_memory_in_bytes" : 873195,
+          "stored_fields_memory_in_bytes" : 132872,
+          "term_vectors_memory_in_bytes" : 0,
+          "norms_memory_in_bytes" : 13440,
+          "points_memory_in_bytes" : 1858,
+          "doc_values_memory_in_bytes" : 5964,
+          "index_writer_memory_in_bytes" : 0,
+          "version_map_memory_in_bytes" : 0,
+          "fixed_bit_set_memory_in_bytes" : 63608,
+          "max_unsafe_auto_id_timestamp" : -1,
+          "file_sizes" : { }
+        },
+        "translog" : {
+          "operations" : 50756,
+          "size_in_bytes" : 131741445
+        },
+        "request_cache" : {
+          "memory_size_in_bytes" : 0,
+          "evictions" : 0,
+          "hit_count" : 0,
+          "miss_count" : 0
+        },
+        "recovery" : {
+          "current_as_source" : 0,
+          "current_as_target" : 0,
+          "throttle_time_in_millis" : 0
+        }
+      },
+      "total" : {
+        "docs" : {
+          "count" : 501512,
+          "deleted" : 0
+        },
+        "store" : {
+          "size_in_bytes" : 1262807021,
+          "throttle_time_in_millis" : 0
+        },
+        "indexing" : {
+          "index_total" : 250756,
+          "index_time_in_millis" : 123206,
+          "index_current" : 0,
+          "index_failed" : 0,
+          "delete_total" : 0,
+          "delete_time_in_millis" : 0,
+          "delete_current" : 0,
+          "noop_update_total" : 0,
+          "is_throttled" : false,
+          "throttle_time_in_millis" : 0
+        },
+        "get" : {
+          "total" : 2,
+          "time_in_millis" : 3,
+          "exists_total" : 0,
+          "exists_time_in_millis" : 0,
+          "missing_total" : 2,
+          "missing_time_in_millis" : 3,
+          "current" : 0
+        },
+        "search" : {
+          "open_contexts" : 0,
+          "query_total" : 0,
+          "query_time_in_millis" : 0,
+          "query_current" : 0,
+          "fetch_total" : 0,
+          "fetch_time_in_millis" : 0,
+          "fetch_current" : 0,
+          "scroll_total" : 0,
+          "scroll_time_in_millis" : 0,
+          "scroll_current" : 0,
+          "suggest_total" : 0,
+          "suggest_time_in_millis" : 0,
+          "suggest_current" : 0
+        },
+        "merges" : {
+          "current" : 0,
+          "current_docs" : 0,
+          "current_size_in_bytes" : 0,
+          "total" : 15,
+          "total_time_in_millis" : 135411,
+          "total_docs" : 818242,
+          "total_size_in_bytes" : 1300227702,
+          "total_stopped_time_in_millis" : 0,
+          "total_throttled_time_in_millis" : 94412,
+          "total_auto_throttle_in_bytes" : 8085428
+        },
+        "refresh" : {
+          "total" : 171,
+          "total_time_in_millis" : 36674,
+          "listeners" : 0
+        },
+        "flush" : {
+          "total" : 2,
+          "total_time_in_millis" : 325
+        },
+        "warmer" : {
+          "current" : 0,
+          "total" : 174,
+          "total_time_in_millis" : 273
+        },
+        "query_cache" : {
+          "memory_size_in_bytes" : 0,
+          "total_count" : 0,
+          "hit_count" : 0,
+          "miss_count" : 0,
+          "cache_size" : 0,
+          "cache_count" : 0,
+          "evictions" : 0
+        },
+        "fielddata" : {
+          "memory_size_in_bytes" : 0,
+          "evictions" : 0
+        },
+        "completion" : {
+          "size_in_bytes" : 0
+        },
+        "segments" : {
+          "count" : 21,
+          "memory_in_bytes" : 1027329,
+          "terms_memory_in_bytes" : 873195,
+          "stored_fields_memory_in_bytes" : 132872,
+          "term_vectors_memory_in_bytes" : 0,
+          "norms_memory_in_bytes" : 13440,
+          "points_memory_in_bytes" : 1858,
+          "doc_values_memory_in_bytes" : 5964,
+          "index_writer_memory_in_bytes" : 0,
+          "version_map_memory_in_bytes" : 0,
+          "fixed_bit_set_memory_in_bytes" : 63608,
+          "max_unsafe_auto_id_timestamp" : -1,
+          "file_sizes" : { }
+        },
+        "translog" : {
+          "operations" : 50756,
+          "size_in_bytes" : 131741445
+        },
+        "request_cache" : {
+          "memory_size_in_bytes" : 0,
+          "evictions" : 0,
+          "hit_count" : 0,
+          "miss_count" : 0
+        },
+        "recovery" : {
+          "current_as_source" : 0,
+          "current_as_target" : 0,
+          "throttle_time_in_millis" : 0
+        }
+      }
+    }
+  }
+}

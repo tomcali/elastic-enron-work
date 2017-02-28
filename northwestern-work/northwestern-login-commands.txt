@@ -1,0 +1,72 @@
+ssh twm275@129.105.88.91
+
+sftp twm275@129.105.88.91
+
+
+sudo /etc/init.d/elasticsearch start
+
+at pwd location  /etc
+
+sudo ls -la elasticsearch
+
+sudo cat elasticsearch/elasticsearch.yml
+
+sudo cat elasticsearch/log4j2.properties
+
+cluster.name: sps-es-cluster
+node.name: sps-node-1
+network.host: 0.0.0.0
+http.port: 9200
+
+/etc/elasticsearch/elasticsearch.jml has
+...
+discovery.zen.ping.unicast.hosts: ["129.105.88.91","129.105.88.93","129.105.88.94","127.0.0.1"]
+... 
+"host" : "127.0.0.1"
+...
+
+curl -XGET 'http://localhost:9200/_nodes?pretty'
+...
+                "hosts" : [
+                  "129.105.88.91",
+                  "129.105.88.93",
+                  "129.105.88.94",
+                  "127.0.0.1"
+...                  
+-------------------------------------
+
+curl -XGET 'http://localhost:9200/_nodes?pretty'
+
+-------------------------------------
+
+cluster.name: sps-es-cluster
+node.name: sps-node-3
+
+ssh twm275@129.105.88.93
+curl -XGET 'http://localhost:9200/_nodes?pretty'
+
+-------------------------------------
+cluster.name: sps-es-cluster
+node.name: sps-node-4
+
+ssh twm275@129.105.88.94
+curl -XGET 'http://localhost:9200/_nodes?pretty'
+
+-------------------------------------
+
+
+-------------------------------------
+
+ssh twm275@ES2-129.105.88.92
+Could not resolve hostname es2-129.105.88.92: nodename nor servname provided, or not known
+
+I do not appear to have access to the system you have set up as the host.
+ssh twm275@127.0.0.1
+ssh: connect to host 127.0.0.1 port 22: Connection refused
+
+
+
+ES1–129.105.88.91
+ES2-129.105.88.92
+ES3-129.105.88.93
+ES4-129.105.88.94

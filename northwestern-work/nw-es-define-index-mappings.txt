@@ -1,0 +1,70 @@
+curl -XPUT 'localhost:9200/enron' -d '{
+  "settings":{
+    "index.number_of_shards":5,
+    "index.number_of_replicas":1,
+    "index":{
+      "analysis":{
+        "analyzer":{
+          "myanalyzer":{
+            "type":"custom",
+            "tokenizer":"uax_url_email"
+          }
+        }
+      }
+    }
+  },
+  "mappings":{
+    "email":{
+      "properties":{
+        "body":{
+          "type":"text"
+        },
+        "headers":{
+          "type":"nested",
+          "properties":{
+            "Date":{
+              "type":"date",
+              "format":"EEE, dd MMM yyyy HH:mm:ss Z (z)"
+            },
+            "From":{
+              "type":"text",
+              "analyzer":"myanalyzer"
+            },
+            "Message-ID":{
+              "type":"string",
+              "include_in_all": false,
+              "index": "no"
+            },
+            "Subject":{
+              "type":"text"
+            },
+            "To":{
+              "type":"text",
+              "analyzer":"myanalyzer"
+            },
+            "X-From":{
+              "type":"text"
+            },
+            "X-To":{
+              "type":"text"
+            },
+            "X-bcc":{
+              "type":"text"
+            },
+            "X-cc":{
+              "type":"text"
+            }
+          }
+        },  
+        "mailbox":{
+          "type":"text"
+        },
+        "subFolder":{
+          "type":"string",
+          "include_in_all": false,
+          "index": "no"
+        }
+      }
+    }
+  }
+}'

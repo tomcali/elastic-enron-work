@@ -1,0 +1,356 @@
+Last login: Sun Feb 26 15:43:28 on ttys002
+-bash: poweruser-2:~: command not found
+vpn-165-124-162-20:~ poweruser$ [warn] kq_init: detected broken kqueue; not using.: Undefined error: 0
+[0226/215628:WARNING:dns_config_service_posix.cc(146)] dns_config has unhandled options!
+[warn] kq_init: detected broken kqueue; not using.: Undefined error: 0
+[warn] kq_init: detected broken kqueue; not using.: Undefined error: 0
+[warn] kq_init: detected broken kqueue; not using.: Undefined error: 0
+2017-02-26 21:56:28.763 Dropbox[4520:1020603] PyObjCPointer created: at 0x117bd7940 of type ^{OpaqueJSContext=}
+2017-02-26 21:56:31.621 Dropbox[4520:1020729] PyObjCPointer created: at 0x1172ae160 of type ^{__SecTrust=}16@0:8
+2017-02-26 21:56:31.949 Dropbox[4520:1020729] PyObjCPointer created: at 0x10072ce00 of type ^{__SecTrust=}16@0:8
+
+[1]+  Done                    HOME=$HOME/Dropbox-personal /Applications/Dropbox.app/Contents/MacOS/Dropbox
+vpn-165-124-162-20:~ poweruser$ 
+vpn-165-124-162-20:~ poweruser$ 
+vpn-165-124-162-20:~ poweruser$ 
+vpn-165-124-162-20:~ poweruser$ ssh twm275@129.105.88.91
+twm275@129.105.88.91's password: 
+Last login: Tue Feb 16 02:25:24 2016 from vpn-165-124-161-109.vpn.northwestern.edu
+[twm275@spselastic1 ~]$ ls
+h2o_work  R  run_h2o_jump_start.R  sydney_work
+[twm275@spselastic1 ~]$ logout
+Connection to 129.105.88.91 closed.
+vpn-165-124-162-20:~ poweruser$ 
+vpn-165-124-162-20:~ poweruser$ 
+vpn-165-124-162-20:~ poweruser$ 
+vpn-165-124-162-20:~ poweruser$ cd elastic-enron-work
+vpn-165-124-162-20:elastic-enron-work poweruser$ ls
+README.md
+bash-0-es-remove-commands.txt
+bash-1-es-install-commands.txt
+bash-2-es-startup-commands.txt
+bash-3-es-define-index-schema.txt
+bash-4-es-data-input-by-bulk-indexing.txt
+bash-5-es-index-search.txt
+bash-6-es-index-search-results.txt
+bash-git-startup-commands.txt
+bulk_data_prep
+bulk_files
+elasticsearch.yml
+northwestern-login-commands.txt
+sps_elastic_tutorial_1_2_3.docx
+vpn-165-124-162-20:elastic-enron-work poweruser$ sftp twm275@129.105.88.91
+twm275@129.105.88.91's password: 
+Connected to 129.105.88.91.
+sftp> ls
+R                      h2o_work               run_h2o_jump_start.R   sydney_work            
+sftp> mkdir bulk_files
+sftp> cd bulk_files
+sftp> ls
+sftp> put enron_mail_1_0
+stat enron_mail_1_0: No such file or directory
+sftp> quit
+vpn-165-124-162-20:elastic-enron-work poweruser$ pwd
+/Users/poweruser/elastic-enron-work
+vpn-165-124-162-20:elastic-enron-work poweruser$ cd bulk_files
+vpn-165-124-162-20:bulk_files poweruser$ ls
+enron_mail_1_0	enron_mail_2_1	enron_mail_3_2	enron_mail_4_3	enron_mail_5_3
+enron_mail_1_1	enron_mail_2_2	enron_mail_3_3	enron_mail_4_4	enron_mail_5_4
+enron_mail_1_2	enron_mail_2_3	enron_mail_3_4	enron_mail_4_5	enron_mail_5_5
+enron_mail_1_3	enron_mail_2_4	enron_mail_3_5	enron_mail_4_6	enron_mail_5_6
+enron_mail_1_4	enron_mail_2_5	enron_mail_3_6	enron_mail_4_7	enron_mail_5_7
+enron_mail_1_5	enron_mail_2_6	enron_mail_3_7	enron_mail_4_8	enron_mail_5_8
+enron_mail_1_6	enron_mail_2_7	enron_mail_3_8	enron_mail_4_9	enron_mail_5_9
+enron_mail_1_7	enron_mail_2_8	enron_mail_3_9	enron_mail_5_0
+enron_mail_1_8	enron_mail_2_9	enron_mail_4_0	enron_mail_5_1
+enron_mail_1_9	enron_mail_3_0	enron_mail_4_1	enron_mail_5_10
+enron_mail_2_0	enron_mail_3_1	enron_mail_4_2	enron_mail_5_2
+vpn-165-124-162-20:bulk_files poweruser$ sftp twm275@129.105.88.91
+twm275@129.105.88.91's password: 
+Connected to 129.105.88.91.
+sftp> ls
+R                      bulk_files             h2o_work               run_h2o_jump_start.R   
+sydney_work            
+sftp> cd bulk_files
+sftp> ls
+sftp> put enron_mail_1_0
+Uploading enron_mail_1_0 to /home/twm275/bulk_files/enron_mail_1_0
+enron_mail_1_0                                                                      100%   12MB 158.3KB/s   01:19    
+sftp> put enron_mail_1_1
+Uploading enron_mail_1_1 to /home/twm275/bulk_files/enron_mail_1_1
+enron_mail_1_1                                                                      100%   12MB 158.3KB/s   01:18    
+sftp> put enron_mail_1_2
+Uploading enron_mail_1_2 to /home/twm275/bulk_files/enron_mail_1_2
+enron_mail_1_2                                                                      100%   12MB 125.0KB/s   01:42    
+sftp> put enron_mail_1_3
+Uploading enron_mail_1_3 to /home/twm275/bulk_files/enron_mail_1_3
+enron_mail_1_3                                                                      100%   15MB 118.5KB/s   02:10    
+sftp> put enron_mail_1_4
+Uploading enron_mail_1_4 to /home/twm275/bulk_files/enron_mail_1_4
+enron_mail_1_4                                                                      100%   26MB 112.9KB/s   03:55    
+sftp> put enron_mail_1_5
+Uploading enron_mail_1_5 to /home/twm275/bulk_files/enron_mail_1_5
+enron_mail_1_5                                                                      100%   31MB 113.2KB/s   04:38    
+sftp> put enron_mail_1_6
+Uploading enron_mail_1_6 to /home/twm275/bulk_files/enron_mail_1_6
+enron_mail_1_6                                                                      100%   15MB 109.7KB/s   02:20    
+sftp> put enron_mail_1_7
+Uploading enron_mail_1_7 to /home/twm275/bulk_files/enron_mail_1_7
+enron_mail_1_7                                                                      100%   14MB 121.0KB/s   01:54    
+sftp> put enron_mail_1_8
+Uploading enron_mail_1_8 to /home/twm275/bulk_files/enron_mail_1_8
+enron_mail_1_8                                                                      100%   11MB 112.0KB/s   01:40    
+sftp> put enron_mail_1_9
+Uploading enron_mail_1_9 to /home/twm275/bulk_files/enron_mail_1_9
+enron_mail_1_9                                                                      100%   11MB 106.5KB/s   01:42    
+sftp> put enron_mail_2_0
+Uploading enron_mail_2_0 to /home/twm275/bulk_files/enron_mail_2_0
+enron_mail_2_0                                                                      100%   10MB 105.6KB/s   01:38    
+sftp> put enron_mail_2_1
+Uploading enron_mail_2_1 to /home/twm275/bulk_files/enron_mail_2_1
+enron_mail_2_1                                                                      100% 9299KB 112.3KB/s   01:22    
+sftp> put enron_mail_2_2
+Uploading enron_mail_2_2 to /home/twm275/bulk_files/enron_mail_2_2
+enron_mail_2_2                                                                      100%   11MB 118.2KB/s   01:37    
+sftp> put enron_mail_2_3
+Uploading enron_mail_2_3 to /home/twm275/bulk_files/enron_mail_2_3
+enron_mail_2_3                                                                      100%   14MB 113.5KB/s   02:02    
+sftp> put enron_mail_2_4
+Uploading enron_mail_2_4 to /home/twm275/bulk_files/enron_mail_2_4
+enron_mail_2_4                                                                      100%   15MB 115.5KB/s   02:16    
+sftp> put enron_mail_2_5
+Uploading enron_mail_2_5 to /home/twm275/bulk_files/enron_mail_2_5
+enron_mail_2_5                                                                      100%   17MB 112.0KB/s   02:31    
+sftp> put enron_mail_2_6
+Uploading enron_mail_2_6 to /home/twm275/bulk_files/enron_mail_2_6
+enron_mail_2_6                                                                      100% 9954KB 110.1KB/s   01:30    
+sftp> put enron_mail_2_7
+Uploading enron_mail_2_7 to /home/twm275/bulk_files/enron_mail_2_7
+enron_mail_2_7                                                                       12% 1376KB   0.0KB/s - stalled -packet_write_wait: Connection to 129.105.88.91 port 22: Broken pipe
+vpn-165-124-162-20:bulk_files poweruser$ ls
+enron_mail_1_0	enron_mail_1_8	enron_mail_2_6	enron_mail_3_4	enron_mail_4_2	enron_mail_5_0	enron_mail_5_7
+enron_mail_1_1	enron_mail_1_9	enron_mail_2_7	enron_mail_3_5	enron_mail_4_3	enron_mail_5_1	enron_mail_5_8
+enron_mail_1_2	enron_mail_2_0	enron_mail_2_8	enron_mail_3_6	enron_mail_4_4	enron_mail_5_10	enron_mail_5_9
+enron_mail_1_3	enron_mail_2_1	enron_mail_2_9	enron_mail_3_7	enron_mail_4_5	enron_mail_5_2
+enron_mail_1_4	enron_mail_2_2	enron_mail_3_0	enron_mail_3_8	enron_mail_4_6	enron_mail_5_3
+enron_mail_1_5	enron_mail_2_3	enron_mail_3_1	enron_mail_3_9	enron_mail_4_7	enron_mail_5_4
+enron_mail_1_6	enron_mail_2_4	enron_mail_3_2	enron_mail_4_0	enron_mail_4_8	enron_mail_5_5
+enron_mail_1_7	enron_mail_2_5	enron_mail_3_3	enron_mail_4_1	enron_mail_4_9	enron_mail_5_6
+vpn-165-124-162-20:bulk_files poweruser$ pwd
+/Users/poweruser/elastic-enron-work/bulk_files
+vpn-165-124-162-20:bulk_files poweruser$ sftp twm275@129.105.88.91
+twm275@129.105.88.91's password: 
+Connected to 129.105.88.91.
+sftp> pwd
+Remote working directory: /home/twm275
+sftp> ls
+R                      bulk_files             h2o_work               run_h2o_jump_start.R   sydney_work            
+sftp> cd bulk_files
+sftp> ls
+enron_mail_1_0  enron_mail_1_1  enron_mail_1_2  enron_mail_1_3  enron_mail_1_4  enron_mail_1_5  enron_mail_1_6  
+enron_mail_1_7  enron_mail_1_8  enron_mail_1_9  enron_mail_2_0  enron_mail_2_1  enron_mail_2_2  enron_mail_2_3  
+enron_mail_2_4  enron_mail_2_5  enron_mail_2_6  enron_mail_2_7  
+sftp> ls -la
+drwxr-xr-x    2 twm275   wheel        4096 Feb 27 01:11 .
+drwx------    8 twm275   wheel        4096 Feb 27 00:17 ..
+-rw-r--r--    1 twm275   wheel    12807571 Feb 27 00:22 enron_mail_1_0
+-rw-r--r--    1 twm275   wheel    12763115 Feb 27 00:25 enron_mail_1_1
+-rw-r--r--    1 twm275   wheel    13063630 Feb 27 00:28 enron_mail_1_2
+-rw-r--r--    1 twm275   wheel    15822418 Feb 27 00:31 enron_mail_1_3
+-rw-r--r--    1 twm275   wheel    27261773 Feb 27 00:36 enron_mail_1_4
+-rw-r--r--    1 twm275   wheel    32277255 Feb 27 00:41 enron_mail_1_5
+-rw-r--r--    1 twm275   wheel    15732531 Feb 27 00:43 enron_mail_1_6
+-rw-r--r--    1 twm275   wheel    14242529 Feb 27 00:47 enron_mail_1_7
+-rw-r--r--    1 twm275   wheel    11542932 Feb 27 00:49 enron_mail_1_8
+-rw-r--r--    1 twm275   wheel    11131378 Feb 27 00:52 enron_mail_1_9
+-rw-r--r--    1 twm275   wheel    10666658 Feb 27 00:54 enron_mail_2_0
+-rw-r--r--    1 twm275   wheel     9521787 Feb 27 00:56 enron_mail_2_1
+-rw-r--r--    1 twm275   wheel    11790217 Feb 27 00:58 enron_mail_2_2
+-rw-r--r--    1 twm275   wheel    14236310 Feb 27 01:00 enron_mail_2_3
+-rw-r--r--    1 twm275   wheel    16199458 Feb 27 01:06 enron_mail_2_4
+-rw-r--r--    1 twm275   wheel    17427857 Feb 27 01:08 enron_mail_2_5
+-rw-r--r--    1 twm275   wheel    10192716 Feb 27 01:10 enron_mail_2_6
+-rw-r--r--    1 twm275   wheel     1441792 Feb 27 01:11 enron_mail_2_7
+sftp> rm enron_mail_2_7
+Removing /home/twm275/bulk_files/enron_mail_2_7
+sftp> ls -la
+drwxr-xr-x    2 twm275   wheel        4096 Feb 27 06:14 .
+drwx------    8 twm275   wheel        4096 Feb 27 00:17 ..
+-rw-r--r--    1 twm275   wheel    12807571 Feb 27 00:22 enron_mail_1_0
+-rw-r--r--    1 twm275   wheel    12763115 Feb 27 00:25 enron_mail_1_1
+-rw-r--r--    1 twm275   wheel    13063630 Feb 27 00:28 enron_mail_1_2
+-rw-r--r--    1 twm275   wheel    15822418 Feb 27 00:31 enron_mail_1_3
+-rw-r--r--    1 twm275   wheel    27261773 Feb 27 00:36 enron_mail_1_4
+-rw-r--r--    1 twm275   wheel    32277255 Feb 27 00:41 enron_mail_1_5
+-rw-r--r--    1 twm275   wheel    15732531 Feb 27 00:43 enron_mail_1_6
+-rw-r--r--    1 twm275   wheel    14242529 Feb 27 00:47 enron_mail_1_7
+-rw-r--r--    1 twm275   wheel    11542932 Feb 27 00:49 enron_mail_1_8
+-rw-r--r--    1 twm275   wheel    11131378 Feb 27 00:52 enron_mail_1_9
+-rw-r--r--    1 twm275   wheel    10666658 Feb 27 00:54 enron_mail_2_0
+-rw-r--r--    1 twm275   wheel     9521787 Feb 27 00:56 enron_mail_2_1
+-rw-r--r--    1 twm275   wheel    11790217 Feb 27 00:58 enron_mail_2_2
+-rw-r--r--    1 twm275   wheel    14236310 Feb 27 01:00 enron_mail_2_3
+-rw-r--r--    1 twm275   wheel    16199458 Feb 27 01:06 enron_mail_2_4
+-rw-r--r--    1 twm275   wheel    17427857 Feb 27 01:08 enron_mail_2_5
+-rw-r--r--    1 twm275   wheel    10192716 Feb 27 01:10 enron_mail_2_6
+sftp> put enron_mail_2_7
+Uploading enron_mail_2_7 to /home/twm275/bulk_files/enron_mail_2_7
+enron_mail_2_7                                                                      100%   11MB 145.2KB/s   01:15    
+sftp> put enron_mail_2_8
+Uploading enron_mail_2_8 to /home/twm275/bulk_files/enron_mail_2_8
+enron_mail_2_8                                                                      100% 9887KB 139.5KB/s   01:10    
+sftp> put enron_mail_2_9
+Uploading enron_mail_2_9 to /home/twm275/bulk_files/enron_mail_2_9
+enron_mail_2_9                                                                      100%   12MB 137.7KB/s   01:25    
+sftp> put enron_mail_3_0
+Uploading enron_mail_3_0 to /home/twm275/bulk_files/enron_mail_3_0
+enron_mail_3_0                                                                      100%   11MB 143.3KB/s   01:18    
+sftp> put enron_mail_3_1
+Uploading enron_mail_3_1 to /home/twm275/bulk_files/enron_mail_3_1
+enron_mail_3_1                                                                      100%   19MB 147.2KB/s   02:15    
+sftp> put enron_mail_3_2
+Uploading enron_mail_3_2 to /home/twm275/bulk_files/enron_mail_3_2
+enron_mail_3_2                                                                      100%   21MB 144.1KB/s   02:31    
+sftp> put enron_mail_3_3
+Uploading enron_mail_3_3 to /home/twm275/bulk_files/enron_mail_3_3
+enron_mail_3_3                                                                      100%   18MB 145.7KB/s   02:05    
+sftp> put enron_mail_3_4
+Uploading enron_mail_3_4 to /home/twm275/bulk_files/enron_mail_3_4
+enron_mail_3_4                                                                      100%   15MB 143.6KB/s   01:49    
+sftp> put enron_mail_3_5
+Uploading enron_mail_3_5 to /home/twm275/bulk_files/enron_mail_3_5
+enron_mail_3_5                                                                      100%   10MB 131.1KB/s   01:17    
+sftp> put enron_mail_3_6
+Uploading enron_mail_3_6 to /home/twm275/bulk_files/enron_mail_3_6
+enron_mail_3_6                                                                      100%   15MB 146.9KB/s   01:46    
+sftp> put enron_mail_3_7
+Uploading enron_mail_3_7 to /home/twm275/bulk_files/enron_mail_3_7
+enron_mail_3_7                                                                      100%   11MB 128.0KB/s   01:25    
+sftp> put enron_mail_3_8
+Uploading enron_mail_3_8 to /home/twm275/bulk_files/enron_mail_3_8
+enron_mail_3_8                                                                      100%   10MB 142.3KB/s   01:11    
+sftp> put enron_mail_3_9
+Uploading enron_mail_3_9 to /home/twm275/bulk_files/enron_mail_3_9
+enron_mail_3_9                                                                      100% 9810KB 136.9KB/s   01:11    
+sftp> put enron_mail_4_0
+Uploading enron_mail_4_0 to /home/twm275/bulk_files/enron_mail_4_0
+enron_mail_4_0                                                                      100%   17MB 137.9KB/s   02:04    
+sftp> put enron_mail_4_1
+Uploading enron_mail_4_1 to /home/twm275/bulk_files/enron_mail_4_1
+enron_mail_4_1                                                                      100%   11MB 121.6KB/s   01:36    
+sftp> put enron_mail_4_2
+Uploading enron_mail_4_2 to /home/twm275/bulk_files/enron_mail_4_2
+enron_mail_4_2                                                                      100%   11MB 119.8KB/s   01:30    
+sftp> put enron_mail_4_3
+Uploading enron_mail_4_3 to /home/twm275/bulk_files/enron_mail_4_3
+enron_mail_4_3                                                                      100%   10MB 128.6KB/s   01:18    
+sftp> put enron_mail_4_4
+Uploading enron_mail_4_4 to /home/twm275/bulk_files/enron_mail_4_4
+enron_mail_4_4                                                                      100%   10MB 123.4KB/s   01:21    
+sftp> put enron_mail_4_5
+Uploading enron_mail_4_5 to /home/twm275/bulk_files/enron_mail_4_5
+enron_mail_4_5                                                                      100% 9748KB 141.9KB/s   01:08    
+sftp> put enron_mail_4_6
+Uploading enron_mail_4_6 to /home/twm275/bulk_files/enron_mail_4_6
+enron_mail_4_6                                                                      100% 9849KB 123.2KB/s   01:19    
+sftp> put enron_mail_4_7
+Uploading enron_mail_4_7 to /home/twm275/bulk_files/enron_mail_4_7
+enron_mail_4_7                                                                      100%   13MB 142.5KB/s   01:30    
+sftp> put enron_mail_4_8
+Uploading enron_mail_4_8 to /home/twm275/bulk_files/enron_mail_4_8
+enron_mail_4_8                                                                      100%   13MB 118.5KB/s   01:53    
+sftp> put enron_mail_4_9
+Uploading enron_mail_4_9 to /home/twm275/bulk_files/enron_mail_4_9
+enron_mail_4_9                                                                      100%   13MB 138.2KB/s   01:34    
+sftp> put enron_mail_5_0
+Uploading enron_mail_5_0 to /home/twm275/bulk_files/enron_mail_5_0
+enron_mail_5_0                                                                      100%   12MB 139.7KB/s   01:25    
+sftp> put enron_mail_5_1
+Uploading enron_mail_5_1 to /home/twm275/bulk_files/enron_mail_5_1
+enron_mail_5_1                                                                      100%   11MB 122.0KB/s   01:34    
+sftp> put enron_mail_5_2
+Uploading enron_mail_5_2 to /home/twm275/bulk_files/enron_mail_5_2
+enron_mail_5_2                                                                      100%   16MB 131.9KB/s   02:02    
+sftp> put enron_mail_5_3
+Uploading enron_mail_5_3 to /home/twm275/bulk_files/enron_mail_5_3
+enron_mail_5_3                                                                      100%   12MB 126.4KB/s   01:35    
+sftp> put enron_mail_5_4
+Uploading enron_mail_5_4 to /home/twm275/bulk_files/enron_mail_5_4
+enron_mail_5_4                                                                      100%   12MB 138.9KB/s   01:28    
+sftp> put enron_mail_5_5
+Uploading enron_mail_5_5 to /home/twm275/bulk_files/enron_mail_5_5
+enron_mail_5_5                                                                      100%   11MB 134.6KB/s   01:26    
+sftp> put enron_mail_5_6
+Uploading enron_mail_5_6 to /home/twm275/bulk_files/enron_mail_5_6
+enron_mail_5_6                                                                      100%   13MB  56.6KB/s   03:47    
+sftp> put enron_mail_5_7
+Uploading enron_mail_5_7 to /home/twm275/bulk_files/enron_mail_5_7
+enron_mail_5_7                                                                      100%   13MB  87.9KB/s   02:35    
+sftp> put enron_mail_5_8
+Uploading enron_mail_5_8 to /home/twm275/bulk_files/enron_mail_5_8
+enron_mail_5_8                                                                      100%   12MB  56.5KB/s   03:44    
+sftp> put enron_mail_5_9
+Uploading enron_mail_5_9 to /home/twm275/bulk_files/enron_mail_5_9
+enron_mail_5_9                                                                      100%   12MB  40.4KB/s   04:59    
+sftp> put enron_mail_5_10
+Uploading enron_mail_5_10 to /home/twm275/bulk_files/enron_mail_5_10
+enron_mail_5_10                                                                     100% 1699KB  14.3KB/s   01:58    
+sftp> 
+sftp> 
+sftp> 
+sftp> 
+sftp> ls -la
+drwxr-xr-x    2 twm275   wheel        4096 Feb 27 08:27 .
+drwx------    8 twm275   wheel        4096 Feb 27 00:17 ..
+-rw-r--r--    1 twm275   wheel    12807571 Feb 27 00:22 enron_mail_1_0
+-rw-r--r--    1 twm275   wheel    12763115 Feb 27 00:25 enron_mail_1_1
+-rw-r--r--    1 twm275   wheel    13063630 Feb 27 00:28 enron_mail_1_2
+-rw-r--r--    1 twm275   wheel    15822418 Feb 27 00:31 enron_mail_1_3
+-rw-r--r--    1 twm275   wheel    27261773 Feb 27 00:36 enron_mail_1_4
+-rw-r--r--    1 twm275   wheel    32277255 Feb 27 00:41 enron_mail_1_5
+-rw-r--r--    1 twm275   wheel    15732531 Feb 27 00:43 enron_mail_1_6
+-rw-r--r--    1 twm275   wheel    14242529 Feb 27 00:47 enron_mail_1_7
+-rw-r--r--    1 twm275   wheel    11542932 Feb 27 00:49 enron_mail_1_8
+-rw-r--r--    1 twm275   wheel    11131378 Feb 27 00:52 enron_mail_1_9
+-rw-r--r--    1 twm275   wheel    10666658 Feb 27 00:54 enron_mail_2_0
+-rw-r--r--    1 twm275   wheel     9521787 Feb 27 00:56 enron_mail_2_1
+-rw-r--r--    1 twm275   wheel    11790217 Feb 27 00:58 enron_mail_2_2
+-rw-r--r--    1 twm275   wheel    14236310 Feb 27 01:00 enron_mail_2_3
+-rw-r--r--    1 twm275   wheel    16199458 Feb 27 01:06 enron_mail_2_4
+-rw-r--r--    1 twm275   wheel    17427857 Feb 27 01:08 enron_mail_2_5
+-rw-r--r--    1 twm275   wheel    10192716 Feb 27 01:10 enron_mail_2_6
+-rw-r--r--    1 twm275   wheel    11235581 Feb 27 06:15 enron_mail_2_7
+-rw-r--r--    1 twm275   wheel    10124565 Feb 27 06:22 enron_mail_2_8
+-rw-r--r--    1 twm275   wheel    12094366 Feb 27 06:24 enron_mail_2_9
+-rw-r--r--    1 twm275   wheel    11527052 Feb 27 06:33 enron_mail_3_0
+-rw-r--r--    1 twm275   wheel    20412716 Feb 27 06:37 enron_mail_3_1
+-rw-r--r--    1 twm275   wheel    22290738 Feb 27 06:43 enron_mail_3_2
+-rw-r--r--    1 twm275   wheel    18729433 Feb 27 06:47 enron_mail_3_3
+-rw-r--r--    1 twm275   wheel    16100939 Feb 27 06:53 enron_mail_3_4
+-rw-r--r--    1 twm275   wheel    10425141 Feb 27 06:55 enron_mail_3_5
+-rw-r--r--    1 twm275   wheel    15946394 Feb 27 07:02 enron_mail_3_6
+-rw-r--r--    1 twm275   wheel    11202247 Feb 27 07:03 enron_mail_3_7
+-rw-r--r--    1 twm275   wheel    10470391 Feb 27 07:06 enron_mail_3_8
+-rw-r--r--    1 twm275   wheel    10045887 Feb 27 07:07 enron_mail_3_9
+-rw-r--r--    1 twm275   wheel    17609012 Feb 27 07:10 enron_mail_4_0
+-rw-r--r--    1 twm275   wheel    12043532 Feb 27 07:12 enron_mail_4_1
+-rw-r--r--    1 twm275   wheel    11045979 Feb 27 07:18 enron_mail_4_2
+-rw-r--r--    1 twm275   wheel    10379395 Feb 27 07:20 enron_mail_4_3
+-rw-r--r--    1 twm275   wheel    10262139 Feb 27 07:24 enron_mail_4_4
+-rw-r--r--    1 twm275   wheel     9981551 Feb 27 07:25 enron_mail_4_5
+-rw-r--r--    1 twm275   wheel    10085716 Feb 27 07:28 enron_mail_4_6
+-rw-r--r--    1 twm275   wheel    13222428 Feb 27 07:31 enron_mail_4_7
+-rw-r--r--    1 twm275   wheel    13739056 Feb 27 07:34 enron_mail_4_8
+-rw-r--r--    1 twm275   wheel    13328551 Feb 27 07:39 enron_mail_4_9
+-rw-r--r--    1 twm275   wheel    12281652 Feb 27 07:42 enron_mail_5_0
+-rw-r--r--    1 twm275   wheel    11800446 Feb 27 07:44 enron_mail_5_1
+-rw-r--r--    1 twm275   wheel     1739343 Feb 27 08:29 enron_mail_5_10
+-rw-r--r--    1 twm275   wheel    16495804 Feb 27 07:50 enron_mail_5_2
+-rw-r--r--    1 twm275   wheel    12390579 Feb 27 07:52 enron_mail_5_3
+-rw-r--r--    1 twm275   wheel    12650972 Feb 27 07:56 enron_mail_5_4
+-rw-r--r--    1 twm275   wheel    11982106 Feb 27 08:00 enron_mail_5_5
+-rw-r--r--    1 twm275   wheel    13183095 Feb 27 08:07 enron_mail_5_6
+-rw-r--r--    1 twm275   wheel    13984490 Feb 27 08:14 enron_mail_5_7
+-rw-r--r--    1 twm275   wheel    12990425 Feb 27 08:21 enron_mail_5_8
+-rw-r--r--    1 twm275   wheel    12394124 Feb 27 08:27 enron_mail_5_9
+sftp> 
